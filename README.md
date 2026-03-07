@@ -6,8 +6,8 @@ Origine des données :
 * Les chiffres de ventes : [https://www.vgchartz.com/gamedb/games.php?name=pokemon](https://www.vgchartz.com/gamedb/games.php?name=pokemon), [https://www.nintendo.co.jp/ir/en/finance/index.html](https://www.nintendo.co.jp/ir/en/finance/index.html)
 
 * Données de gameplay (Pokémon, types, mécaniques) :
-API : [https://pokeapi.co/docs/v2](https://pokeapi.co/docs/v2)
-Sites de référence : [https://www.serebii.net/ ](https://www.serebii.net/), [(https://bulbapedia.bulbagarden.net/wiki/Browse:Video_Games)](https://bulbapedia.bulbagarden.net/wiki/Browse:Video_Games)
+   * API : [https://pokeapi.co/docs/v2](https://pokeapi.co/docs/v2)
+   * Sites de référence : [https://www.serebii.net/ ](https://www.serebii.net/), [(https://bulbapedia.bulbagarden.net/wiki/Browse:Video_Games)](https://bulbapedia.bulbagarden.net/wiki/Browse:Video_Games)
 
 * Les notes critiques des jeux : [https://www.metacritic.com/search/pokemon/](https://www.metacritic.com/search/pokemon/)
 
@@ -18,10 +18,10 @@ Sites de référence : [https://www.serebii.net/ ](https://www.serebii.net/), [(
 * Contexte de collecte :
 Ces données sont collectées depuis 1996 par des passionnés pour documenter la franchise la plus lucrative au monde.
 
-Biais et absences identifiés :
-    * Subjectivité des notes : Les notes des critiques (Metacritic) ne reflètent pas toujours l'expérience du joueur final.
-    * Données de prix : L'inflation n'est pas toujours prise en compte dans les comparaisons historiques sans un ajustement manuel.
-    * Absences : Les données précises sur les budgets de développement et la taille des équipes de Game Freak sont rarement publiques, ce qui limite l'analyse de la corrélation "moyens investis vs résultat".
+* Biais et absences identifiés :
+   * Subjectivité des notes : Les notes des critiques (Metacritic) ne reflètent pas toujours l'expérience du joueur final.
+   * Données de prix : L'inflation n'est pas toujours prise en compte dans les comparaisons historiques sans un ajustement manuel.
+   * Absences : Les données précises sur les budgets de développement et la taille des équipes de Game Freak sont rarement publiques, ce qui limite l'analyse de la corrélation "moyens investis vs résultat".
 
 ## Description :
 Le jeu de données final est une structure multi-table organisée par génération (de la 1ère à la 9ème).
