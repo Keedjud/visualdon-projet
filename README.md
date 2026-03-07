@@ -2,8 +2,20 @@
 ## Contexte :
 Les données utilisées pour ce projet proviennent de sources hétérogènes regroupant des statistiques officielles de Nintendo et de The Pokémon Company, ainsi que des bases de données communautaires.
 
-* Origine des données : Les chiffres de ventes sont issus des rapports financiers de Nintendo, tandis que les données de gameplay (Pokémon, types, mécaniques) proviennent d'API comme PokéAPI et de sites de référence (Serebii, Bulbapedia). Les notes critiques sont agrégées via Metacritic. Finalement les durées de vies des jeux proviennent de How Long To Beat.
-* Contexte de collecte : Ces données sont collectées depuis 1996 par des passionnés pour documenter la franchise la plus lucratives au monde.
+* Origine des données :
+Les chiffres de ventes : [https://www.vgchartz.com/gamedb/games.php?name=pokemon](https://www.vgchartz.com/gamedb/games.php?name=pokemon), 
+
+Données de gameplay (Pokémon, types, mécaniques) :
+API : [https://pokeapi.co/docs/v2](https://pokeapi.co/docs/v2)
+Sites de référence : [https://www.serebii.net/ ](https://www.serebii.net/), [(https://bulbapedia.bulbagarden.net/wiki/Browse:Video_Games)](https://bulbapedia.bulbagarden.net/wiki/Browse:Video_Games)
+
+Les notes critiques des jeux : [https://www.metacritic.com/search/pokemon/](https://www.metacritic.com/search/pokemon/)
+
+Les durées de vies des jeux : [https://howlongtobeat.com/?q=pokemon](https://howlongtobeat.com/?q=pokemon)
+
+* Contexte de collecte :
+Ces données sont collectées depuis 1996 par des passionnés pour documenter la franchise la plus lucrative au monde.
+
 * Biais et absences identifiés :
     * Subjectivité des notes : Les notes des critiques (Metacritic) ne reflètent pas toujours l'expérience du joueur final.
     * Données de prix : L'inflation n'est pas toujours prise en compte dans les comparaisons historiques sans un ajustement manuel.
@@ -36,12 +48,7 @@ Nous voulons raconter l'histoire d'un géant qui avance à petits pas. Le récit
 Nous portons un regard critique mais nuancé. L'objectif est de démontrer objectivement que si la licence évolue (nouveaux types, passage à la 3D, monde ouvert), cette progression est parfois déconnectée des standards technologiques de l'industrie. Nous voulons transformer le "ressenti" du joueur en "constat" visuel : l'évolution est réelle, mais son rythme interroge.
 
 ## Références :
-Pour construire cette visualisation, nous nous inspirons de travaux majeurs en data-journalisme :
 
-* The Pudding : Pour leurs formats narratifs où le scroll déclenche des animations fluides (ex: leurs analyses sur l'évolution de la pop culture).
+* Analyse/Avis d'un joueur sur la licence Pokemon : [https://www.youtube.com/watch?v=dSlgJ5JjV6w](https://www.youtube.com/watch?v=dSlgJ5JjV6w)
 
-* Information is Beautiful : Pour la clarté des comparaisons multi-variables.
-
-* Analyses Académiques/Presse : Des articles de Gamekult ou Eurogamer concernant la "formule Pokémon" et les analyses de ventes de VGChartz.
-
-* Projets Similaires : L'infographie "25 Years of Pokémon" de Statista qui explore la croissance financière de la marque.
+* Analyse de l'évolution du graphisme : [https://www.youtube.com/watch?v=Ihk3dYPLfcs](https://www.youtube.com/watch?v=Ihk3dYPLfcs)
