@@ -28,7 +28,9 @@ Le jeu de données final est une structure multi-table organisée par générati
 
 * Format : JSON pour les données d'API et pour les données agrégées manuellement (ventes, notes, temps de jeu, etc.).
 * Attributs clés :
-    * generation : Identifiant de la période (1 à 9).
+    * generation : Identifiant de la génération (1 à 9).
+    * version\_group : Groupe de versions très similaires d'un jeu.
+    * gamne\_type : Type de jeu (version de base, DLC).
     * sales : Nombre de copies vendues.
     * metascore : Note moyenne des critiques (0-100).
     * userscore : Note moyenne des utilisateurs (0-10).
@@ -39,7 +41,7 @@ Le jeu de données final est une structure multi-table organisée par générati
     * playtime\_completion : Temps moyen pour compléter le jeu à 100% (en heures).
     * release_date : Date de sortie (DD/MM/YY).
     * price : Prix du jeu.
-    * price_total : Prix total du jeu avec DLC.
+    * price_total : Prix total du jeu avec DLC (pour les jeux de type version de base).
     * patch-count : Nombre de patches post-lancement
     * games_releases : Nombre de jeux pokémons sortis la même année
 
