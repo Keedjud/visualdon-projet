@@ -28,22 +28,22 @@ Le jeu de données final est une structure multi-table organisée par générati
 
 * Format : JSON pour les données d'API et pour les données agrégées manuellement (ventes, notes, temps de jeu, etc.).
 * Attributs clés :
-    * generation : Identifiant de la génération (1 à 9).
-    * version\_group : Groupe de versions très similaires d'un jeu.
-    * gamne\_type : Type de jeu (version de base, DLC).
-    * sales : Nombre de copies vendues.
-    * metascore : Note moyenne des critiques (0-100).
-    * userscore : Note moyenne des utilisateurs (0-10).
-    * new\_pokemon\_count : Nombre de nouveaux pokémon.
-    * gameplay\_mechanics : Liste des nouveautés (Méga-Évolution, Dynamax, etc.).
-    * playtime\_main\_story : Temps moyen pour finir le jeu (en heures).
-    * playtime\_extra : Temps moyen pour finir le jeu + les extras (en heures).
-    * playtime\_completion : Temps moyen pour compléter le jeu à 100% (en heures).
-    * release_date : Date de sortie (DD/MM/YY).
-    * price : Prix du jeu.
-    * price_total : Prix total du jeu avec DLC (pour les jeux de type version de base).
-    * patch-count : Nombre de patches post-lancement
-    * games_releases : Nombre de jeux pokémons sortis la même année
+    * generation INTEGER : Identifiant de la génération (1 à 9).
+    * version\_group STRING : Groupe de versions très similaires d'un jeu.
+    * game\_type ENUM : Type de jeu (version de base, DLC).
+    * sales INTEGER : Nombre de copies vendues.
+    * metascore INTEGER : Note moyenne des critiques (0-100).
+    * userscore INTEGER : Note moyenne des utilisateurs (0-10).
+    * new\_pokemon\_count INTEGER : Nombre de nouveaux pokémon.
+    * gameplay\_mechanics ENUM : Liste des nouveautés (Méga-Évolution, Dynamax, etc.).
+    * playtime\_main\_story DECIMAL(10, 2) : Temps moyen pour finir le jeu (en heures).
+    * playtime\_extra DECIMAL(10, 2) : Temps moyen pour finir le jeu + les extras (en heures).
+    * playtime\_completion DECIMAL(10, 2) : Temps moyen pour compléter le jeu à 100% (en heures).
+    * release_date DECIMAL(10, 2) : Date de sortie (DD/MM/YY).
+    * price DECIMAL(10, 2) : Prix du jeu.
+    * price_total DECIMAL(10, 2) : Prix total du jeu avec DLC (pour les jeux de type version de base).
+    * patch-count INTEGER : Nombre de patches post-lancement
+    * games_releases INTEGER : Nombre de jeux pokémons sortis la même année
 
 ## But :
 Ce projet adopte une approche hybride : **explorative** et **explicative**.
