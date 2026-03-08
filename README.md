@@ -32,14 +32,14 @@ Le jeu de données final est une structure multi-table organisée par générati
     * version\_group STRING : Groupe de versions très similaires d'un jeu.
     * game\_type ENUM : Type de jeu (version de base, DLC).
     * sales INTEGER : Nombre de copies vendues.
-    * metascore INTEGER : Note moyenne des critiques (0-100).
-    * userscore INTEGER : Note moyenne des utilisateurs (0-10).
+    * metascore DECIMAL(10, 2) : Note moyenne des critiques (0-100).
+    * userscore DECIMAL(10, 2) : Note moyenne des utilisateurs (0-10).
     * new\_pokemon\_count INTEGER : Nombre de nouveaux pokémon.
     * gameplay\_mechanics ENUM : Liste des nouveautés (Méga-Évolution, Dynamax, etc.).
     * playtime\_main\_story DECIMAL(10, 2) : Temps moyen pour finir le jeu (en heures).
     * playtime\_extra DECIMAL(10, 2) : Temps moyen pour finir le jeu + les extras (en heures).
     * playtime\_completion DECIMAL(10, 2) : Temps moyen pour compléter le jeu à 100% (en heures).
-    * release_date DECIMAL(10, 2) : Date de sortie (DD/MM/YY).
+    * release_date DATE : Date de sortie (DD/MM/YY).
     * price DECIMAL(10, 2) : Prix du jeu.
     * price_total DECIMAL(10, 2) : Prix total du jeu avec DLC (pour les jeux de type version de base).
     * patch-count INTEGER : Nombre de patches post-lancement
