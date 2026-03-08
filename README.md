@@ -19,12 +19,11 @@ Origine des données :
 Ces données sont collectées depuis 1996 par des passionnés pour documenter la franchise la plus lucrative au monde.
 
 * Biais et absences identifiés :
-   * Subjectivité des notes : Les notes des critiques (Metacritic) ne reflètent pas toujours l'expérience du joueur final.
-   * Données de prix : L'inflation n'est pas toujours prise en compte dans les comparaisons historiques sans un ajustement manuel.
+   * Données de prix : L'inflation n'est pas prise en compte dans les comparaisons historiques sans un ajustement manuel.
    * Absences : Les données précises sur les budgets de développement et la taille des équipes de Game Freak sont rarement publiques, ce qui limite l'analyse de la corrélation "moyens investis vs résultat".
 
 ## Description :
-Le jeu de données final est une structure multi-table organisée par génération (de la 1ère à la 9ème).
+Le jeu de données final est une structure multi-table organisée par groupe de version.
 
 * Format : JSON pour les données d'API et pour les données agrégées manuellement (ventes, notes, temps de jeu, etc.).
 * Attributs clés :
