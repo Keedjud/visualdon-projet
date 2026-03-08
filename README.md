@@ -26,20 +26,20 @@ Ces données sont collectées depuis 1996 par des passionnés pour documenter la
 ## Description :
 Le jeu de données final est une structure multi-table organisée par génération (de la 1ère à la 9ème).
 
-* Format : JSON pour les données d'API et pour les données agrégées manuellement (ventes, notes).
+* Format : JSON pour les données d'API et pour les données agrégées manuellement (ventes, notes, temps de jeu, etc.).
 * Attributs clés :
     * generation : Identifiant de la période (1 à 9).
-    * sales\_units : Nombre de copies vendues.
+    * sales : Nombre de copies vendues.
     * metascore : Note moyenne des critiques (0-100).
     * userscore : Note moyenne des utilisateurs (0-10).
-    * new\_pokemon\_count : Nombre de nouvelles créatures.
+    * new\_pokemon\_count : Nombre de nouveaux pokémon.
     * gameplay\_mechanics : Liste des nouveautés (Méga-Évolution, Dynamax, etc.).
     * playtime\_main\_story : Temps moyen pour finir le jeu (en heures).
     * playtime\_extra : Temps moyen pour finir le jeu + les extras (en heures).
     * playtime\_completion : Temps moyen pour compléter le jeu à 100% (en heures).
-    * release_date : Date de sortie
-    * price : Prix du jeu
-    * price_total : Prix total du jeu avec DLC
+    * release_date : Date de sortie (DD/MM/YY).
+    * price : Prix du jeu.
+    * price_total : Prix total du jeu avec DLC.
     * patch-count : Nombre de patches post-lancement
     * games_releases : Nombre de jeux pokémons sortis la même année
 
@@ -48,7 +48,7 @@ Ce projet adopte une approche hybride : **explorative** et **explicative**.
 
 **L'Histoire que nous racontons**
 
-Nous voulons raconter l'histoire d'un géant qui avance à petits pas. Le récit, conçu sous forme de scrollytelling, guide l'utilisateur à travers les décennies pour lui faire réaliser le paradoxe de Pokémon : une popularité qui explose (ventes record) face à une stagnation critique et technique perçue par une partie de la communauté.
+Nous voulons raconter l'histoire d'un géant qui avance à petits pas. Le récit, conçu sous forme de scrollytelling, guide l'utilisateur à travers les décennies pour lui faire réaliser le paradoxe de Pokémon : une popularité qui explose face à une stagnation critique et technique perçue par une partie de la communauté.
 
 **Notre regard sur les données**
 
