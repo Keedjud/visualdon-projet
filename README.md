@@ -40,7 +40,7 @@ Le jeu de données final est une structure multi-table organisée par groupe de 
     * playtime\_completion DECIMAL(10, 2) : Temps moyen pour compléter le jeu à 100% (en heures).
     * release_date DATE : Date de sortie (DD/MM/YY).
     * price DECIMAL(10, 2) : Prix du jeu.
-    * price_total DECIMAL(10, 2) : Prix total du jeu avec DLC (pour les jeux de type version de base).
+    * console VARCHAR : La console qui supporte le jeu
     * patch-count INTEGER : Nombre de patches post-lancement
     * games_releases INTEGER : Nombre de jeux pokémons sortis la même année
 
