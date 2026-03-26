@@ -1,0 +1,22 @@
+[
+  {
+    "id": "dp",
+    "generation": 4,
+    "version_group": "Diamond & Pearl",
+    "game_type": "base",
+    "sales": 17670000,
+    "metascore": 85.00,
+    "userscore": 8.10,
+    "new_pokemon_count": 107,
+    "gameplay_mechanics": ["Physical/Special Split", "Global Terminal"],
+    "playtime": {
+      "main": 41.00,
+      "extra": 78.50,
+      "completion": 256.00
+    },
+    "release_date": "28/09/06",
+    "price": 39.99,
+    "console": "Nintendo DS",
+    "patch_count": 0
+  }
+]

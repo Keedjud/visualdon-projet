@@ -42,7 +42,6 @@ Le jeu de données final est une structure multi-table organisée par groupe de 
     * price DECIMAL(10, 2) : Prix du jeu.
     * console VARCHAR : La console qui supporte le jeu
     * patch-count INTEGER : Nombre de patches post-lancement
-    * games_releases INTEGER : Nombre de jeux pokémons sortis la même année
 
 ## But :
 Ce projet adopte une approche hybride : **explorative** et **explicative**.
