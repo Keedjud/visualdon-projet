@@ -1,6 +1,6 @@
 [
   {
-    "id": 29,
+    "id": 27,
     "generation": 0,
     "version_group": "Légendes Pokémon: Z-A : Mega Dimension",
     "game_type": "DLC",
@@ -20,7 +20,7 @@
     "patch_count": 0
   },
     {
-    "id": 28,
+    "id": 26,
     "generation": 0,
     "version_group": "Légendes Pokémon: Z-A",
     "game_type": "base",
@@ -40,7 +40,7 @@
     "patch_count": 0
   },
   {
-    "id": 27,
+    "id": 25,
     "generation": 0,
     "version_group": "Pokémon Écarlate et Violet: Le Disque Indigo",
     "game_type": "DLC",
@@ -60,7 +60,7 @@
     "patch_count": 0
   },
     {
-    "id": 26,
+    "id": 24,
     "generation": 0,
     "version_group": "Pokémon Écarlate et Violet: Le Masque Turquoise",
     "game_type": "DLC",
@@ -80,7 +80,7 @@
     "patch_count": 0
   },
     {
-    "id": 25,
+    "id": 23,
     "generation": 0,
     "version_group": "Pokémon Écarlate et Violet",
     "game_type": "base",
@@ -100,7 +100,7 @@
     "patch_count": 0
   },
     {
-    "id": 24,
+    "id": 22,
     "generation": 0,
     "version_group": "Légendes Pokémon: Arceus",
     "game_type": "base",
@@ -120,7 +120,7 @@
     "patch_count": 0
   },
     {
-    "id": 23,
+    "id": 21,
     "generation": 0,
     "version_group": "Pokémon Diamant Étincelant et Perle Scintillante",
     "game_type": "base",
@@ -140,7 +140,7 @@
     "patch_count": 0
   },
     {
-    "id": 22,
+    "id": 20,
     "generation": 0,
     "version_group": "Pokémon Épée et Bouclier: Les Terres Enneigées de la Couronne",
     "game_type": "DLC",
@@ -160,7 +160,7 @@
     "patch_count": 0
   },
     {
-    "id": 21,
+    "id": 19,
     "generation": 0,
     "version_group": "Pokémon Épée et Bouclier: L'île Solitaire de l'Armure",
     "game_type": "DLC",
@@ -180,7 +180,7 @@
     "patch_count": 0
   },
     {
-    "id": 20,
+    "id": 18,
     "generation": 0,
     "version_group": "Pokémon Épée et Bouclier",
     "game_type": "base",
@@ -200,7 +200,7 @@
     "patch_count": 0
   },
     {
-    "id": 19,
+    "id": 17,
     "generation": 0,
     "version_group": "Pokémon : Let's Go, Pikachu et Évoli",
     "game_type": "base",
@@ -220,7 +220,7 @@
     "patch_count": 0
   },
     {
-    "id": 18,
+    "id": 16,
     "generation": 0,
     "version_group": "Pokémon Ultra-Soleil et Ultra-Lune",
     "game_type": "base",
@@ -240,13 +240,293 @@
     "patch_count": 0
   },
     {
-    "id": 17,
+    "id": 15,
     "generation": 0,
     "version_group": "Pokémon Soleil et Lune",
     "game_type": "base",
     "sales": 0,
     "metascore": 87.00,
     "userscore": 7.50,
+    "new_pokemon_count": 0,
+    "gameplay_mechanics": [" "],
+    "playtime": {
+      "main": 0,
+      "extra": 0,
+      "completion": 0
+    },
+    "release_date": " ",
+    "price": 0,
+    "console": " ",
+    "patch_count": 0
+  },
+    {
+    "id": 14,
+    "generation": 0,
+    "version_group": "Pokémon Rubis Oméga et Saphir Alpha",
+    "game_type": "base",
+    "sales": 0,
+    "metascore": 82.50,
+    "userscore": 7.70,
+    "new_pokemon_count": 0,
+    "gameplay_mechanics": [" "],
+    "playtime": {
+      "main": 0,
+      "extra": 0,
+      "completion": 0
+    },
+    "release_date": " ",
+    "price": 0,
+    "console": " ",
+    "patch_count": 0
+  },
+    {
+    "id": 13,
+    "generation": 0,
+    "version_group": "Pokémon X et Y",
+    "game_type": "base",
+    "sales": 0,
+    "metascore": 87.50,
+    "userscore": 7.50,
+    "new_pokemon_count": 0,
+    "gameplay_mechanics": [" "],
+    "playtime": {
+      "main": 0,
+      "extra": 0,
+      "completion": 0
+    },
+    "release_date": " ",
+    "price": 0,
+    "console": " ",
+    "patch_count": 0
+  },
+    {
+    "id": 12,
+    "generation": 0,
+    "version_group": "Pokémon Noir 2 et Blanc 2",
+    "game_type": "base",
+    "sales": 0,
+    "metascore": 80.00,
+    "userscore": 8.30,
+    "new_pokemon_count": 0,
+    "gameplay_mechanics": [" "],
+    "playtime": {
+      "main": 0,
+      "extra": 0,
+      "completion": 0
+    },
+    "release_date": " ",
+    "price": 0,
+    "console": " ",
+    "patch_count": 0
+  },
+    {
+    "id": 11,
+    "generation": 0,
+    "version_group": "Pokémon Noir et Blanc",
+    "game_type": "base",
+    "sales": 0,
+    "metascore": 87.00,
+    "userscore": 8.10,
+    "new_pokemon_count": 0,
+    "gameplay_mechanics": [" "],
+    "playtime": {
+      "main": 0,
+      "extra": 0,
+      "completion": 0
+    },
+    "release_date": " ",
+    "price": 0,
+    "console": " ",
+    "patch_count": 0
+  },
+    {
+    "id": 10,
+    "generation": 0,
+    "version_group": "Pokémon Or HeartGold et Argent SoulSilver",
+    "game_type": "base",
+    "sales": 0,
+    "metascore": 87.00,
+    "userscore": 9.10,
+    "new_pokemon_count": 0,
+    "gameplay_mechanics": [" "],
+    "playtime": {
+      "main": 0,
+      "extra": 0,
+      "completion": 0
+    },
+    "release_date": " ",
+    "price": 0,
+    "console": " ",
+    "patch_count": 0
+  },
+    {
+    "id": 9,
+    "generation": 0,
+    "version_group": "Pokémon Platine",
+    "game_type": "base",
+    "sales": 0,
+    "metascore": 83.00,
+    "userscore": 8.90,
+    "new_pokemon_count": 0,
+    "gameplay_mechanics": [" "],
+    "playtime": {
+      "main": 0,
+      "extra": 0,
+      "completion": 0
+    },
+    "release_date": " ",
+    "price": 0,
+    "console": " ",
+    "patch_count": 0
+  },
+    {
+    "id": 8,
+    "generation": 0,
+    "version_group": "Pokémon Diamant et Perle",
+    "game_type": "base",
+    "sales": 0,
+    "metascore": 85.00,
+    "userscore": 8.10,
+    "new_pokemon_count": 0,
+    "gameplay_mechanics": [" "],
+    "playtime": {
+      "main": 0,
+      "extra": 0,
+      "completion": 0
+    },
+    "release_date": " ",
+    "price": 0,
+    "console": " ",
+    "patch_count": 0
+  },
+    {
+    "id": 7,
+    "generation": 0,
+    "version_group": "Pokémon Émeraude",
+    "game_type": "base",
+    "sales": 0,
+    "metascore": 76.00,
+    "userscore": 8.80,
+    "new_pokemon_count": 0,
+    "gameplay_mechanics": [" "],
+    "playtime": {
+      "main": 0,
+      "extra": 0,
+      "completion": 0
+    },
+    "release_date": " ",
+    "price": 0,
+    "console": " ",
+    "patch_count": 0
+  },
+    {
+    "id": 6,
+    "generation": 0,
+    "version_group": "Pokémon Rouge Feu et Vert Feuille",
+    "game_type": "base",
+    "sales": 0,
+    "metascore": 81.00,
+    "userscore": 8.45,
+    "new_pokemon_count": 0,
+    "gameplay_mechanics": [" "],
+    "playtime": {
+      "main": 0,
+      "extra": 0,
+      "completion": 0
+    },
+    "release_date": " ",
+    "price": 0,
+    "console": " ",
+    "patch_count": 0
+  },
+    {
+    "id": 5,
+    "generation": 0,
+    "version_group": "Pokémon Rubis et Saphir",
+    "game_type": "base",
+    "sales": 0,
+    "metascore": 82.00,
+    "userscore": 8.15,
+    "new_pokemon_count": 0,
+    "gameplay_mechanics": [" "],
+    "playtime": {
+      "main": 0,
+      "extra": 0,
+      "completion": 0
+    },
+    "release_date": " ",
+    "price": 0,
+    "console": " ",
+    "patch_count": 0
+  },
+    {
+    "id": 4,
+    "generation": 0,
+    "version_group": "Pokémon Cristal",
+    "game_type": "base",
+    "sales": 0,
+    "metascore": 0,
+    "userscore": 0,
+    "new_pokemon_count": 0,
+    "gameplay_mechanics": [" "],
+    "playtime": {
+      "main": 0,
+      "extra": 0,
+      "completion": 0
+    },
+    "release_date": " ",
+    "price": 0,
+    "console": " ",
+    "patch_count": 0
+  },
+    {
+    "id": 3,
+    "generation": 0,
+    "version_group": "Pokémon Or et Argent",
+    "game_type": "base",
+    "sales": 0,
+    "metascore": 0,
+    "userscore": 0,
+    "new_pokemon_count": 0,
+    "gameplay_mechanics": [" "],
+    "playtime": {
+      "main": 0,
+      "extra": 0,
+      "completion": 0
+    },
+    "release_date": " ",
+    "price": 0,
+    "console": " ",
+    "patch_count": 0
+  },
+    {
+    "id": 2,
+    "generation": 0,
+    "version_group": "Pokémon Jaune",
+    "game_type": "base",
+    "sales": 0,
+    "metascore": 0,
+    "userscore": 0,
+    "new_pokemon_count": 0,
+    "gameplay_mechanics": [" "],
+    "playtime": {
+      "main": 0,
+      "extra": 0,
+      "completion": 0
+    },
+    "release_date": " ",
+    "price": 0,
+    "console": " ",
+    "patch_count": 0
+  },
+    {
+    "id": 1,
+    "generation": 0,
+    "version_group": "Pokémon Rouge, Vert et Bleu",
+    "game_type": "base",
+    "sales": 0,
+    "metascore": 0,
+    "userscore": 0,
     "new_pokemon_count": 0,
     "gameplay_mechanics": [" "],
     "playtime": {
