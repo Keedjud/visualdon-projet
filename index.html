@@ -1,15 +1,160 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>visualdon-projet</title>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pokémon — Un géant qui avance à petits pas</title>
+  <meta name="description" content="Scrollytelling sur 30 ans de Pokémon : un succès commercial qui explose face à une stagnation critique." />
 
-    <link rel="stylesheet" href="src/style.css">
-  </head>
-  <body>
-    <main>
-      <div>coucou</div>
-    </main>
-  </body>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="src/css/main.css" />
+  <link rel="stylesheet" href="src/css/sections.css" />
+  <link rel="stylesheet" href="src/css/console.css" />
+  <link rel="stylesheet" href="src/css/pokedex.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script type="module" src="src/js/main.js"></script>
+</head>
+<body>
+  <main>
+    <!-- S1 — Landing -->
+    <section class="section section--landing grid-bg">
+      <p class="eyebrow">Un scrollytelling</p>
+      <h1 class="hero-title">
+        <span class="text-gradient">Pokémon</span><br />
+        un géant qui avance<br />
+        à petits pas
+      </h1>
+      <p class="hero-sub">30 ans · 9 générations · des millions de dresseurs. Mais derrière le succès commercial, une licence dont la critique se fissure.</p>
+      <div class="scroll-cue"><span>Scrolle</span> ↓</div>
+    </section>
+
+    <!-- S2 — Pokédex intro -->
+    <section id="pokedex-intro" class="section section--intro">
+      <div class="intro-sticky">
+        <p class="intro-congrats">★ Félicitations ! ★</p>
+        <h2 class="intro-title">Tu as reçu ton <span class="poke-red">Pokédex</span> !</h2>
+        <img id="pokedex-hero" src="assets/pokedex/closed.png" alt="Pokédex" class="pokedex-hero" />
+        <p class="intro-text">Il restera en bas à gauche pendant tout ton voyage. Ouvre-le à tout moment pour consulter les données du jeu actif.</p>
+      </div>
+    </section>
+
+    <!-- Sticky stage (charts + console) -->
+    <div class="stage-wrapper">
+      <div class="stage-sticky grid-bg">
+        <!-- Sales chart top -->
+        <div id="sales-chart" class="chart-box chart-box--top">
+          <p class="chart-label">Ventes cumulées · millions d'unités</p>
+          <svg id="sales-svg"></svg>
+        </div>
+
+        <!-- Tornado scores chart right -->
+        <div id="scores-chart" class="chart-box chart-box--right">
+          <p class="chart-label center">
+            Metascore <span class="poke-blue">◀</span> · <span class="poke-red">▶</span> Userscore
+          </p>
+          <svg id="scores-svg"></svg>
+        </div>
+
+        <!-- Console stage -->
+        <div class="console-stage">
+          <div class="console-wrap">
+            <img id="console-img" src="assets/consoles/gameboy.png" alt="Console" class="console-img" />
+            <div id="screen-overlay" class="screen-overlay">
+              <div id="pikachu-grid" class="pikachu-grid"></div>
+              <div id="chen-bubble" class="chen-bubble hidden">
+                <img src="assets/professor-chen.png" alt="Professeur Chen" class="chen-img" />
+                <div class="chen-text">Bienvenue dresseur ! Observe en haut les ventes de la licence, et à droite les notes critiques. Scrolle pour voyager dans 30 ans d'évolution !</div>
+              </div>
+            </div>
+          </div>
+          <div id="game-banner" class="game-banner glow-red">
+            <span id="game-banner-gen" class="poke-yellow">Génération I</span>
+            <span class="dot">·</span>
+            <span id="game-banner-title">Pokémon Rouge & Bleu</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tutorial sections -->
+      <div id="tutorials">
+        <section class="tuto-section" data-tuto="sales"></section>
+        <section class="tuto-section" data-tuto="scores"></section>
+      </div>
+
+      <!-- Game scroll sections -->
+      <div id="game-sections"></div>
+    </div>
+
+    <!-- Conclusion -->
+    <section class="section section--outro grid-bg">
+      <p class="eyebrow poke-red">Le constat</p>
+      <h2 class="outro-title">
+        Une <span class="text-gradient">popularité commerciale</span><br />
+        face à une <span class="poke-red">stagnation critique</span>
+      </h2>
+      <div class="outro-text">
+        <p>En trente ans, Pokémon est passé de pixel-art monochrome à monde ouvert sur Switch. Les ventes n'ont jamais été aussi hautes.</p>
+        <p>Pourtant, le userscore d'<span class="poke-yellow">Épée &amp; Bouclier</span> tombe à 5,2. La communauté ressent le retard technique.</p>
+        <p class="strong">La licence avance — mais le pas est court face aux standards de l'industrie.</p>
+      </div>
+      <p class="outro-end">━ Fin du Pokédex ━</p>
+    </section>
+  </main>
+
+  <!-- Fixed Professor overlay (tutorials) -->
+  <div id="prof-overlay" class="prof-overlay">
+    <img src="assets/professor-chen.png" alt="Professeur Chen" class="prof-img" />
+    <div id="prof-bubble" class="prof-bubble"></div>
+  </div>
+
+  <!-- Pokédex icon (fixed bottom-left) -->
+  <button id="pokedex-icon" type="button" class="pokedex-icon glow-red" aria-label="Ouvrir le Pokédex">
+    <img src="assets/pokedex/closed.png" alt="" />
+    <span id="pokedex-notif" class="pokedex-notif">!</span>
+  </button>
+
+  <!-- Pokédex popup -->
+  <div id="pokedex-panel" class="pokedex-panel glow-red" hidden>
+    <header id="pokedex-header" class="pokedex-header">
+      <div class="pokedex-lights">
+        <span class="light light--blue"></span>
+        <span class="light light--green"></span>
+        <span class="light light--yellow"></span>
+        <span class="light light--red"></span>
+      </div>
+      <p class="pokedex-title">Pokédex · <span id="pokedex-gen">Génération I</span></p>
+      <button id="pokedex-close" type="button" class="pokedex-close" aria-label="Fermer">✕</button>
+    </header>
+    <div class="pokedex-body">
+      <div class="pokedex-row">
+        <img id="pokedex-sprite" src="" alt="Pikachu" class="pokedex-sprite" />
+        <div>
+          <h3 id="pokedex-game-title" class="poke-yellow"></h3>
+          <p id="pokedex-console" class="muted"></p>
+        </div>
+      </div>
+      <div class="pokedex-grid">
+        <div class="field"><p class="field-label">Région</p><p id="f-region" class="field-value"></p></div>
+        <div class="field"><p class="field-label">Date de sortie</p><p id="f-date" class="field-value"></p></div>
+        <div class="field"><p class="field-label">Nouveaux Pokémon</p><p id="f-new" class="field-value accent"></p></div>
+        <div class="field"><p class="field-label">Total Pokémon</p><p id="f-total" class="field-value accent"></p></div>
+      </div>
+      <div>
+        <p class="field-label">Durée de vie commerciale (mois)</p>
+        <svg id="lifespan-svg"></svg>
+      </div>
+      <div id="mechanic-box" class="mechanic-box hidden">
+        <p class="field-label poke-blue">Nouvelle mécanique</p>
+        <p id="f-mechanic"></p>
+      </div>
+    </div>
+    <footer id="pokedex-footer" class="pokedex-footer">⋮⋮ glisser ⋮⋮</footer>
+  </div>
+</body>
 </html>

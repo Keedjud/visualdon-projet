@@ -1,0 +1,180 @@
+.section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--poke-blue);
+  margin-bottom: 1.5rem;
+}
+
+.hero-title { font-size: clamp(2rem, 6vw, 4.5rem); max-width: 56rem; }
+.hero-sub { margin-top: 2rem; max-width: 36rem; color: var(--muted); font-size: 1.05rem; }
+.scroll-cue {
+  margin-top: 3rem;
+  font-family: var(--font-display);
+  font-size: 10px;
+  color: var(--poke-yellow);
+  text-transform: uppercase;
+  animation: bounce 2s infinite;
+  display: flex; gap: .5rem; align-items: center;
+}
+@keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+
+/* Pokédex intro */
+.section--intro { min-height: 180vh; padding-top: 20vh; justify-content: flex-start; }
+.intro-sticky {
+  position: sticky;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 2rem;
+}
+.intro-congrats { font-family: var(--font-display); font-size: 1rem; color: var(--poke-yellow); }
+.intro-title { font-size: clamp(1.5rem, 3vw, 2.25rem); max-width: 32rem; }
+.intro-text { max-width: 28rem; color: var(--muted); font-size: .9rem; }
+.pokedex-hero {
+  width: clamp(180px, 22vw, 260px);
+  height: auto;
+  filter: drop-shadow(0 0 40px rgba(255, 80, 80, 0.5));
+  opacity: 0;
+}
+
+/* Stage wrapper holds sticky stage + tuto/game sections */
+.stage-wrapper { position: relative; }
+.stage-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+#tutorials { position: relative; margin-top: -100vh; }
+.tuto-section { position: relative; min-height: 100vh; }
+
+#game-sections { position: relative; }
+.game-section {
+  position: relative;
+  min-height: 200vh;
+  padding: 40vh 1.5rem;
+  display: flex; flex-direction: column;
+  justify-content: space-around;
+}
+.anecdote {
+  position: relative;
+  max-width: 22rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  background: rgba(38, 28, 56, 0.8);
+  backdrop-filter: blur(8px);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-card);
+  z-index: 30;
+}
+.anecdote--left { align-self: flex-start; margin-left: clamp(1rem, 5vw, 3rem); border-color: var(--poke-blue); }
+.anecdote--right { align-self: flex-end; margin-right: clamp(1rem, 5vw, 3rem); border-color: var(--poke-yellow); }
+.anecdote .gen-label { font-family: var(--font-display); font-size: 10px; text-transform: uppercase; color: var(--muted); margin-bottom: .5rem; }
+.anecdote h3 { font-size: 1rem; margin-bottom: .5rem; color: var(--poke-yellow); font-family: var(--font-display); }
+.anecdote p { font-size: .9rem; color: rgba(245, 241, 235, 0.9); }
+
+/* Outro */
+.outro-title { font-size: clamp(1.5rem, 4vw, 3rem); max-width: 48rem; margin-bottom: 2rem; }
+.outro-text { max-width: 36rem; color: var(--muted); font-size: 1rem; display: flex; flex-direction: column; gap: 1rem; }
+.outro-text .strong { color: var(--fg); }
+.outro-end { margin-top: 4rem; font-family: var(--font-display); font-size: .75rem; color: var(--poke-blue); }
+
+/* Charts */
+.chart-box {
+  position: absolute;
+  border-radius: .75rem;
+  border: 1px solid var(--border);
+  background: rgba(38, 28, 56, 0.7);
+  backdrop-filter: blur(10px);
+  padding: .75rem;
+  z-index: 20;
+  transition: all .5s ease;
+}
+.chart-box--top {
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(720px, 90vw);
+}
+.chart-box--right {
+  top: 50%;
+  right: 1.5rem;
+  transform: translateY(-50%);
+  width: 280px;
+  padding: 1rem;
+}
+@media (max-width: 1023px) { .chart-box--right { display: none; } }
+
+.chart-box.highlight {
+  border-color: var(--poke-yellow);
+  box-shadow: 0 0 30px rgba(255, 200, 40, 0.4);
+}
+.chart-box--top.highlight { transform: translateX(-50%) scale(1.02); }
+.chart-box--right.highlight { transform: translateY(-50%) scale(1.03); }
+
+.chart-label {
+  font-family: var(--font-display);
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: .25rem;
+}
+.chart-label.center { text-align: center; margin-bottom: .5rem; }
+
+#sales-svg, #scores-svg, #lifespan-svg { width: 100%; color: var(--muted); }
+
+/* Professor overlay (tutorials, fixed) */
+.prof-overlay {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .7s ease;
+  display: flex; align-items: flex-end; gap: 1rem;
+  max-width: 42rem;
+  padding: 0 1rem;
+}
+.prof-overlay.show { opacity: 1; }
+.prof-img {
+  width: clamp(96px, 12vw, 144px);
+  height: auto;
+  filter: drop-shadow(0 0 30px rgba(255, 200, 40, 0.4));
+  flex-shrink: 0;
+}
+.prof-bubble {
+  position: relative;
+  background: var(--poke-yellow);
+  color: var(--bg);
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+  font-size: .9rem;
+  font-weight: 500;
+  box-shadow: 0 10px 30px rgba(0,0,0,.4);
+  max-width: 28rem;
+}
+.prof-bubble::before {
+  content: "";
+  position: absolute;
+  left: -8px;
+  bottom: 24px;
+  width: 16px; height: 16px;
+  background: var(--poke-yellow);
+  transform: rotate(45deg);
+}

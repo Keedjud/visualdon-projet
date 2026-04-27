@@ -1,0 +1,64 @@
+/* Reset + variables */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+button { background: none; border: none; cursor: pointer; font: inherit; color: inherit; }
+img { display: block; max-width: 100%; }
+svg { display: block; }
+
+:root {
+  --bg: #1a1124;
+  --bg-2: #221833;
+  --card: #261c38;
+  --fg: #f5f1eb;
+  --muted: #9c95b0;
+  --border: #3a2d52;
+
+  --poke-red: #ff5057;
+  --poke-yellow: #ffc828;
+  --poke-blue: #4a8cff;
+  --poke-green: #5fd97a;
+
+  --gradient-text: linear-gradient(135deg, var(--poke-yellow), var(--poke-red));
+  --gradient-hero:
+    radial-gradient(circle at 20% 20%, rgba(255, 80, 87, 0.18), transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(74, 140, 255, 0.18), transparent 50%);
+
+  --shadow-red: 0 0 30px rgba(255, 80, 87, 0.5), 0 0 60px rgba(255, 80, 87, 0.3);
+  --shadow-blue: 0 0 30px rgba(74, 140, 255, 0.5);
+  --shadow-card: 0 10px 40px -10px rgba(0, 0, 0, 0.6);
+
+  --font-display: "Press Start 2P", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  background-image: var(--gradient-hero);
+  background-attachment: fixed;
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.02em; line-height: 1.25; }
+
+/* Utilities */
+.text-gradient { background: var(--gradient-text); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.poke-red { color: var(--poke-red); }
+.poke-yellow { color: var(--poke-yellow); }
+.poke-blue { color: var(--poke-blue); }
+.muted { color: var(--muted); }
+.glow-red { box-shadow: var(--shadow-red); }
+.glow-blue { box-shadow: var(--shadow-blue); }
+.hidden { display: none !important; }
+.pixelated { image-rendering: pixelated; }
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(74, 140, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(74, 140, 255, 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+main { display: block; }
