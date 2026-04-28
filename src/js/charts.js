@@ -1,4 +1,5 @@
 // D3 charts: cumulative sales (top), tornado scores (right), lifespan (pokedex).
+import * as d3 from "d3";
 
 export function drawSales(games, activeIndex) {
   const node = document.getElementById("sales-svg");

@@ -1,4 +1,5 @@
 // Pokédex: drag, open/close, intro fly animation, content update.
+import { gsap, ScrollTrigger } from "./gsap.js";
 import { drawLifespan } from "./charts.js";
 
 let _games = [];

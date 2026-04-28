@@ -1,4 +1,5 @@
 // ScrollTrigger orchestration: builds game sections + tutorial triggers.
+import { ScrollTrigger } from "./gsap.js";
 import { drawSales, drawScores, highlightChart } from "./charts.js";
 import { updateConsole } from "./transitions.js";
 import { setActiveGame, setNotification } from "./pokedex.js";

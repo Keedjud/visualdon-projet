@@ -1,4 +1,5 @@
 // Console transitions + pikachu grid update.
+import { gsap } from "./gsap.js";
 
 let prevConsole = null;
 
