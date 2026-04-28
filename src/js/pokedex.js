@@ -173,7 +173,9 @@ function renderContent() {
   document.getElementById("f-region").textContent = game.region;
   document.getElementById("f-date").textContent = new Date(game.release_date).toLocaleDateString("fr-FR");
   document.getElementById("f-new").textContent = `+${game.new_pokemon_count}`;
-  document.getElementById("f-total").textContent = String(game.new_pokemon_count);
+  document.getElementById("f-battle").textContent = `+${Number(game.battle_forms_count) || 0}`;
+  document.getElementById("f-regional").textContent = `+${Number(game.regional_forms_count) || 0}`;
+  document.getElementById("f-total").textContent = String(game.total_pokemon ?? game.new_pokemon_count);
   const mech = document.getElementById("mechanic-box");
   if (game.gameplay_mechanics) {
     mech.classList.remove("hidden");
