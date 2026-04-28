@@ -86,13 +86,13 @@ function setupGameTriggers() {
       start: "top center",
       end: "bottom center",
       onEnter: () => {
-        setActive(i);
-        setNotification(true);
-        if (i > 0) _showChen = false;
+      setActive(i, "forward");
+      setNotification(true);
+      if (i > 0) _showChen = false;
       },
       onEnterBack: () => {
-        setActive(i);
-        if (i === 0) _showChen = true;
+      setActive(i, "backward");
+      if (i === 0) _showChen = true;
       },
     });
     ScrollTrigger.create({
@@ -109,11 +109,11 @@ function setupGameTriggers() {
   });
 }
 
-function setActive(i) {
+function setActive(i, direction = "forward") {
   if (_activeIndex === i) return;
   _activeIndex = i;
   setActiveGame(i);
-  drawSales(_games, i);
+  drawSales(_games, i, direction);
   drawScores(_games, i);
   updateConsole(_games[i], _sectionProgress, false);
 }
