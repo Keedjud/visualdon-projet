@@ -39,7 +39,7 @@
       <div class="intro-sticky">
         <p class="intro-congrats">★ Félicitations ! ★</p>
         <h2 class="intro-title">Tu as reçu ton <span class="poke-red">Pokédex</span> !</h2>
-        <img id="pokedex-hero" src="assets/pokedex/closed.png" alt="Pokédex" class="pokedex-hero" />
+        <img id="pokedex-hero" src="src/assets/pokedex/pokedex-closed.png" alt="Pokédex" class="pokedex-hero" />
         <p class="intro-text">Il restera en bas à gauche pendant tout ton voyage. Ouvre-le à tout moment pour consulter les données du jeu actif.</p>
       </div>
     </section>
@@ -64,12 +64,10 @@
         <!-- Console stage -->
         <div class="console-stage">
           <div class="console-wrap">
-            <img id="console-img" src="assets/consoles/gameboy.png" alt="Console" class="console-img" />
+            <img id="console-img" src="src/assets/consoles/Game Boy.png" alt="Console" class="console-img" />
             <div id="screen-overlay" class="screen-overlay">
               <div id="pikachu-grid" class="pikachu-grid"></div>
               <div id="chen-bubble" class="chen-bubble hidden">
-                <img src="assets/professor-chen.png" alt="Professeur Chen" class="chen-img" />
-                <div class="chen-text">Bienvenue dresseur ! Observe en haut les ventes de la licence, et à droite les notes critiques. Scrolle pour voyager dans 30 ans d'évolution !</div>
               </div>
             </div>
           </div>
@@ -109,13 +107,13 @@
 
   <!-- Fixed Professor overlay (tutorials) -->
   <div id="prof-overlay" class="prof-overlay">
-    <img src="assets/professor-chen.png" alt="Professeur Chen" class="prof-img" />
+    <img src="src/assets/professor.png" alt="Professeur Chen" class="prof-img" />
     <div id="prof-bubble" class="prof-bubble"></div>
   </div>
 
   <!-- Pokédex icon (fixed bottom-left) -->
   <button id="pokedex-icon" type="button" class="pokedex-icon glow-red" aria-label="Ouvrir le Pokédex">
-    <img src="assets/pokedex/closed.png" alt="" />
+    <img src="src/assets/pokedex/pokedex-closed.png" alt="" />
     <span id="pokedex-notif" class="pokedex-notif">!</span>
   </button>
 

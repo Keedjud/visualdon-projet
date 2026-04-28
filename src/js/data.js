@@ -6,7 +6,7 @@ export async function loadData() {
   const res = await fetch("src/data/data.json");
   if (!res.ok) throw new Error("Failed to load data.json");
   const json = await res.json();
-  _games = json.games;
+  _games = json.games.reverse();
   return _games;
 }
 

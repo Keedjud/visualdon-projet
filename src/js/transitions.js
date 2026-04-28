@@ -25,7 +25,7 @@ export function updateConsole(game, scrollProgress, showChen) {
         .set(img, { scale: 0.7, opacity: 0 })
         .to(img, { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.4)" });
     } else {
-      img.src = `assets/consoles/${game.console}.png`;
+      img.src = `/src/assets/consoles/${game.console}.png`;
     }
     prevConsole = game.console;
   }

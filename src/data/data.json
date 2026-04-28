@@ -18,7 +18,7 @@
     },
     "release_date": "16-10-2025",
     "price": 0,
-    "console": "Nintendo Switch",
+    "console": "Switch",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/scarlet-violet/normal/pikachu.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
@@ -43,7 +43,7 @@
     },
     "release_date": "16-10-2025",
     "price": 0,
-    "console": "Nintendo Switch",
+    "console": "Switch",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/scarlet-violet/normal/pikachu.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
@@ -68,7 +68,7 @@
     },
     "release_date": "14-12-23",
     "price": 0,
-    "console": "Nintendo Switch 2",
+    "console": "Switch",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/scarlet-violet/normal/pikachu.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
@@ -93,7 +93,7 @@
     },
     "release_date": "13-09-23",
     "price": 29.99,
-    "console": "Nintendo Switch 2",
+    "console": "Switch",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/scarlet-violet/normal/pikachu.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
@@ -118,7 +118,7 @@
     },
     "release_date": "18-11-2022",
     "price": 59.99,
-    "console": "Nintendo Switch",
+    "console": "Switch",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/scarlet-violet/normal/pikachu.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
@@ -143,7 +143,7 @@
     },
     "release_date": "28-01-2022",
     "price": 59.99,
-    "console": "Nintendo Switch",
+    "console": "Switch",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/sword-shield/normal/pikachu.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
@@ -168,7 +168,7 @@
     },
     "release_date": "19-11-2021",
     "price": 59.99,
-    "console": "Nintendo Switch",
+    "console": "Switch",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/sword-shield/normal/pikachu.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
@@ -193,7 +193,7 @@
     },
     "release_date": "22-10-2020",
     "price": 0,
-    "console": "Nintendo Switch",
+    "console": "Switch",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/sword-shield/normal/pikachu.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
@@ -218,7 +218,7 @@
     },
     "release_date": "17-06-2020",
     "price": 29.99,
-    "console": "Nintendo Switch",
+    "console": "Switch",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/sword-shield/normal/pikachu.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
@@ -243,7 +243,7 @@
     },
     "release_date": "15-11-2019",
     "price": 59.99,
-    "console": "Nintendo Switch",
+    "console": "Switch",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/sword-shield/normal/pikachu.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
@@ -268,7 +268,7 @@
     },
     "release_date": "16-11-2018",
     "price": 59.99,
-    "console": "Nintendo Switch",
+    "console": "Switch",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/sun-moon/normal/pikachu-f.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
@@ -537,7 +537,7 @@
     "new_pokemon_count": 135,
     "gameplay_mechanics": [" "],
     "playtime": {
-      "main": 29.5,
+      "main": 29.50,
       "extra": 49,
       "completion": 139
     },
@@ -587,7 +587,7 @@
     "new_pokemon_count": 100,
     "gameplay_mechanics": [" "],
     "playtime": {
-      "main": 28.5,
+      "main": 28.50,
       "extra": 50,
       "completion": 135
     },

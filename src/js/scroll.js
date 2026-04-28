@@ -6,6 +6,8 @@ import { setActiveGame, setNotification } from "./pokedex.js";
 const TUTORIALS = [
   { id: "sales", text: "Regarde en HAUT de l'écran : ce graphique montre les ventes cumulées de chaque jeu, en millions d'unités. Plus la courbe monte, plus la licence cartonne." },
   { id: "scores", text: "À DROITE, tu verras un duel : à gauche le Metascore (la critique professionnelle), à droite le Userscore (les joueurs). Quand les deux barres divergent... ça raconte une histoire." },
+  { id: "console", text: "AU CENTRE, il s'agit de la console sur laquelle le jeu est sorti. De plus, elle montrera des pikachus qui représentera le nombre de pokémons total sortis." },
+  { id: "pokedex", text: "N'oublie pas que tu peux ouvrir la Pokédex, qui te donnera plus d'infos croustillantes sur chaque jeu !" },
 ];
 
 let _games = [];
