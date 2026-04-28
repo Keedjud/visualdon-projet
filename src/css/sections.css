@@ -137,6 +137,27 @@
 
 #sales-svg, #scores-svg, #lifespan-svg { width: 100%; color: var(--muted); }
 
+#lifespan-svg .lifespan-segment {
+  transition: stroke .2s ease, filter .2s ease;
+}
+
+#lifespan-svg .lifespan-bar.is-active .lifespan-segment {
+  stroke: rgba(255, 255, 255, 0.75);
+  stroke-width: 1.5;
+  filter: drop-shadow(0 0 4px rgba(255, 200, 40, 0.35));
+}
+
+#lifespan-svg .lifespan-hit { cursor: pointer; }
+
+#lifespan-svg .lifespan-label-text {
+  font-size: 9px;
+  font-weight: 600;
+  fill: var(--fg);
+  paint-order: stroke;
+  stroke: rgba(0, 0, 0, 0.6);
+  stroke-width: 2;
+}
+
 /* Professor overlay (tutorials, fixed) */
 .prof-overlay {
   position: fixed;

@@ -117,33 +117,104 @@ export function drawLifespan(games, activeIndex) {
   const svg = d3.select(node);
   svg.selectAll("*").remove();
 
-  const data = games.slice(0, activeIndex + 1).map(g => ({
-    name: `Gen ${g.generation}`,
-    v: g.playtime.main,
-  }));
+  const data = games.slice(0, activeIndex + 1).map((g, i) => {
+    const main = Number(g.playtime?.main) || 0;
+    const extra = Number(g.playtime?.extra) || 0;
+    const completion = Number(g.playtime?.completion) || 0;
+      const safeCompletion = Math.max(0, completion);
+      const safeExtra = Math.min(Math.max(0, extra), safeCompletion);
+      const safeMain = Math.min(Math.max(0, main), safeExtra);
+    return {
+      index: i,
+      name: g.version_group,
+      main: safeMain,
+      extra: safeExtra,
+      completion: safeCompletion,
+    };
+  });
 
-  const w = 280, h = 120, m = { t: 8, r: 8, b: 22, l: 28 };
-  const x = d3.scaleBand().domain(data.map(d => d.name)).range([m.l, w - m.r]).padding(.3);
-  const y = d3.scaleLinear().domain([0, 40]).range([h - m.b, m.t]);
+  const w = 280, h = 180;
+  const cx = w / 2;
+  const cy = h / 2;
+  const outerR = Math.min(w, h) / 2 - 6;
+  const innerR = 24;
+  const maxValue = d3.max(data, d => d.completion) || 1;
+
+  const radius = d3.scaleLinear()
+    .domain([0, maxValue])
+    .range([innerR, outerR]);
+
+  const angle = d3.scaleBand()
+    .domain(data.map(d => d.index))
+    .range([0, Math.PI * 2])
+    .padding(0.08);
 
   svg.attr("viewBox", `0 0 ${w} ${h}`).attr("width", "100%");
 
-  svg.append("g").attr("transform", `translate(0,${h - m.b})`)
-    .call(d3.axisBottom(x).tickSize(0))
-    .call(g => g.select(".domain").remove())
-    .selectAll("text").attr("fill", "currentColor").style("font-size", "9px");
+  const root = svg.append("g")
+    .attr("class", "lifespan-radial")
+    .attr("transform", `translate(${cx},${cy})`);
 
-  svg.append("g").attr("transform", `translate(${m.l},0)`)
-    .call(d3.axisLeft(y).ticks(3).tickSize(-(w - m.l - m.r)))
-    .call(g => g.select(".domain").remove())
-    .call(g => g.selectAll("line").attr("stroke", "currentColor").attr("stroke-opacity", .1))
-    .selectAll("text").attr("fill", "currentColor").style("font-size", "9px");
+  const arc = d3.arc();
+  const arcPath = (d, r0, r1) => {
+    const start = angle(d.index) ?? 0;
+    const end = start + angle.bandwidth();
+    return arc({ startAngle: start, endAngle: end, innerRadius: r0, outerRadius: r1 });
+  };
 
-  svg.selectAll("rect.bar").data(data).join("rect")
-    .attr("class", "bar")
-    .attr("x", d => x(d.name)).attr("y", d => y(d.v))
-    .attr("width", x.bandwidth()).attr("height", d => h - m.b - y(d.v))
-    .attr("fill", "#ffc828").attr("rx", 3);
+  const bars = root.selectAll("g.lifespan-bar").data(data).join("g")
+    .attr("class", "lifespan-bar");
+
+  bars.append("path")
+    .attr("class", "lifespan-segment segment--main")
+    .attr("fill", "var(--poke-yellow)")
+    .attr("d", d => arcPath(d, innerR, radius(d.main)));
+
+  bars.append("path")
+    .attr("class", "lifespan-segment segment--extra")
+    .attr("fill", "var(--poke-blue)")
+    .attr("d", d => arcPath(d, radius(d.main), radius(d.extra)));
+
+  bars.append("path")
+    .attr("class", "lifespan-segment segment--completion")
+    .attr("fill", "var(--poke-red)")
+    .attr("d", d => arcPath(d, radius(d.extra), radius(d.completion)));
+
+  bars.append("path")
+    .attr("class", "lifespan-hit")
+    .attr("fill", "transparent")
+    .attr("d", d => arcPath(d, innerR, Math.max(radius(d.completion), innerR + 1)));
+
+  const label = root.append("g")
+    .attr("class", "lifespan-label")
+    .style("opacity", 0)
+    .style("pointer-events", "none");
+
+  const labelText = label.append("text")
+    .attr("class", "lifespan-label-text")
+    .attr("dy", "0.35em");
+
+  bars.on("mouseenter", function (event, d) {
+    const start = angle(d.index) ?? 0;
+    const mid = start + angle.bandwidth() / 2;
+    const r = radius(d.completion) + 10;
+    const x = Math.cos(mid - Math.PI / 2) * r;
+    const y = Math.sin(mid - Math.PI / 2) * r;
+
+    bars.classed("is-active", false);
+    d3.select(this).classed("is-active", true);
+
+    label.attr("transform", `translate(${x},${y})`).style("opacity", 1);
+    labelText
+      .text(d.name)
+      .attr("text-anchor", x >= 0 ? "start" : "end")
+      .attr("dx", x >= 0 ? 6 : -6);
+  });
+
+  bars.on("mouseleave", function () {
+    d3.select(this).classed("is-active", false);
+    label.style("opacity", 0);
+  });
 }
 
 export function highlightChart(which) {
