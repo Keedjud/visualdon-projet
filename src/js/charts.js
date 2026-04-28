@@ -118,7 +118,7 @@ export function drawLifespan(games, activeIndex) {
   svg.selectAll("*").remove();
 
   const data = games.slice(0, activeIndex + 1).map(g => ({
-    name: g.genName.replace("Génération ", "Gen "),
+    name: `Gen ${g.generation}`,
     v: g.playtime.main,
   }));
 

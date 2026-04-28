@@ -40,7 +40,7 @@ function buildGameSections() {
       const card = document.createElement("div");
       card.className = `anecdote anecdote--${a.side}`;
       card.innerHTML = `
-        <p class="gen-label">${escapeHtml(game.genName)}</p>
+        <p class="gen-label">${escapeHtml(`Génération ${game.generation}`)}</p>
         <h3>${escapeHtml(a.title)}</h3>
         <p>${escapeHtml(a.text)}</p>
       `;

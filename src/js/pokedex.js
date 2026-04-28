@@ -166,7 +166,7 @@ function onPointerUp(e) {
 function renderContent() {
   const game = _games[_activeIndex] || _games[0];
   if (!game) return;
-  document.getElementById("pokedex-gen").textContent = game.generation;
+  document.getElementById("pokedex-gen").textContent = `Gen ${game.generation}`;
   document.getElementById("pokedex-sprite").src = game.pikachuSpriteUrl;
   document.getElementById("pokedex-game-title").textContent = game.version_group;
   document.getElementById("pokedex-console").textContent = game.console;
