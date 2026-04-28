@@ -15,7 +15,10 @@ export function drawSales(games, activeIndex) {
   const w = 720, h = 100, m = { t: 8, r: 12, b: 22, l: 32 };
   svg.attr("viewBox", `0 0 ${w} ${h}`);
 
-  const x = d3.scaleLinear().domain([1995, 2022]).range([m.l, w - m.r]);
+  const [minYear, maxYear] = d3.extent(data, d => d.year);
+  const x = d3.scaleLinear()
+  .domain([minYear - 1, maxYear + 1])
+  .range([m.l, w - m.r]);
   const y = d3.scaleLinear().domain([0, 35]).range([h - m.b, m.t]);
 
   svg.append("g").attr("transform", `translate(0,${h - m.b})`)
