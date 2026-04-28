@@ -19,7 +19,7 @@
     "release_date": "16-10-2025",
     "price": 0,
     "console": "Nintendo Switch",
-    "pikachuSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/25.png",
+    "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/scarlet-violet/normal/pikachu.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
         { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
@@ -44,7 +44,7 @@
     "release_date": "16-10-2025",
     "price": 0,
     "console": "Nintendo Switch",
-    "pikachuSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/25.png",
+    "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/scarlet-violet/normal/pikachu.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
         { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
@@ -69,7 +69,7 @@
     "release_date": "14-12-23",
     "price": 0,
     "console": "Nintendo Switch 2",
-    "pikachuSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/25.png",
+    "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/scarlet-violet/normal/pikachu.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
         { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
@@ -94,7 +94,7 @@
     "release_date": "13-09-23",
     "price": 29.99,
     "console": "Nintendo Switch 2",
-    "pikachuSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/25.png",
+    "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/scarlet-violet/normal/pikachu.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
         { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
@@ -119,7 +119,7 @@
     "release_date": "18-11-2022",
     "price": 59.99,
     "console": "Nintendo Switch",
-    "pikachuSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/25.png",
+    "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/scarlet-violet/normal/pikachu.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
         { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
@@ -144,7 +144,7 @@
     "release_date": "28-01-2022",
     "price": 59.99,
     "console": "Nintendo Switch",
-    "pikachuSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/25.png",
+    "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/sword-shield/normal/pikachu.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
         { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
@@ -169,7 +169,7 @@
     "release_date": "19-11-2021",
     "price": 59.99,
     "console": "Nintendo Switch",
-    "pikachuSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/25.png",
+    "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/sword-shield/normal/pikachu.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
         { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
@@ -194,7 +194,7 @@
     "release_date": "22-10-2020",
     "price": 0,
     "console": "Nintendo Switch",
-    "pikachuSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/25.png",
+    "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/sword-shield/normal/pikachu.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
         { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
@@ -219,7 +219,7 @@
     "release_date": "17-06-2020",
     "price": 29.99,
     "console": "Nintendo Switch",
-    "pikachuSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/25.png",
+    "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/sword-shield/normal/pikachu.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
         { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
@@ -244,7 +244,7 @@
     "release_date": "15-11-2019",
     "price": 59.99,
     "console": "Nintendo Switch",
-    "pikachuSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/25.png",
+    "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/sword-shield/normal/pikachu.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
         { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
@@ -269,7 +269,7 @@
     "release_date": "16-11-2018",
     "price": 59.99,
     "console": "Nintendo Switch",
-    "pikachuSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/25.png",
+    "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/sun-moon/normal/pikachu-f.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
         { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
@@ -294,7 +294,7 @@
     "release_date": "17-11-2017",
     "price": 39.99,
     "console": "Nintendo 3DS",
-    "pikachuSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/25.png",
+    "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/sun-moon/normal/pikachu-f.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
         { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
@@ -319,7 +319,7 @@
     "release_date": "18-11-2016",
     "price": 39.99,
     "console": "Nintendo 3DS",
-    "pikachuSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/25.png",
+    "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/sun-moon/normal/pikachu-f.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
         { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
@@ -344,7 +344,7 @@
     "release_date": "21-11-2014",
     "price": 39.99,
     "console": "Nintendo 3DS",
-    "pikachuSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/25.png",
+    "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/x-y/normal/pikachu-f.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
         { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
@@ -369,7 +369,7 @@
     "release_date": "12-10-2013",
     "price": 39.99,
     "console": "Nintendo 3DS",
-    "pikachuSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/25.png",
+    "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/x-y/normal/pikachu-f.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
         { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
@@ -394,7 +394,7 @@
     "release_date": "07-10-2012",
     "price": 34.90,
     "console": "Nintendo DS",
-    "pikachuSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/25.png",
+    "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/black-white/normal/pikachu-f.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
         { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
@@ -419,7 +419,7 @@
     "release_date": "06-03-2011",
     "price": 34.90,
     "console": "Nintendo DS",
-    "pikachuSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/25.png",
+    "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/black-white/normal/pikachu-f.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
         { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
@@ -444,7 +444,7 @@
     "release_date": "14-03-2010",
     "price": 34.90,
     "console": "Nintendo DS",
-    "pikachuSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/25.png",
+    "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/diamond-pearl/normal/pikachu-f.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
         { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
@@ -469,7 +469,7 @@
     "release_date": "22-03-2009",
     "price": 34.90,
     "console": "Nintendo DS",
-    "pikachuSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/25.png",
+    "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/diamond-pearl/normal/pikachu-f.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
         { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
@@ -494,7 +494,7 @@
     "release_date": "28-04-2007",
     "price": 34.90,
     "console": "Nintendo DS",
-    "pikachuSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/25.png",
+    "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/diamond-pearl/normal/pikachu-f.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
         { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
@@ -519,7 +519,7 @@
     "release_date": "30-04-2005",
     "price": 34.90,
     "console": "Game Boy Advance",
-    "pikachuSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/25.png",
+    "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/ruby-sapphire/normal/pikachu.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
         { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
@@ -544,7 +544,7 @@
     "release_date": "07-09-2004",
     "price": 34.90,
     "console": "Game Boy Advance",
-    "pikachuSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/25.png",
+    "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/ruby-sapphire/normal/pikachu.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
         { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
@@ -569,7 +569,7 @@
     "release_date": "17-03-2003",
     "price": 34.90,
     "console": "Game Boy Advance",
-    "pikachuSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/25.png",
+    "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/ruby-sapphire/normal/pikachu.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
         { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
@@ -594,7 +594,7 @@
     "release_date": "29-07-2001",
     "price": 29.90,
     "console": "Game Boy",
-    "pikachuSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/25.png",
+    "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/silver/normal/pikachu.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
         { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
@@ -619,7 +619,7 @@
     "release_date": "14-10-2000",
     "price": 29.90,
     "console": "Game Boy",
-    "pikachuSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/25.png",
+    "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/silver/normal/pikachu.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
         { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
@@ -644,7 +644,7 @@
     "release_date": "19-09-1999",
     "price": 29.90,
     "console": "Game Boy",
-    "pikachuSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/25.png",
+    "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/red-blue/normal/pikachu.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
         { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
@@ -669,7 +669,7 @@
     "release_date": "30-09-1998",
     "price": 29.90,
     "console": "Game Boy",
-    "pikachuSpriteUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/25.png",
+    "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/red-blue/normal/pikachu.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
         { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
