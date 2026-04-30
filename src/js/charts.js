@@ -80,21 +80,25 @@ export function drawSales(games, activeIndex, direction = "forward") {
     .text(d => d.v > 0 ? `${d.v.toFixed(1)}M` : "");
 }
 
-export function drawScores(games, activeIndex) {
+export function drawScores(games, activeIndex, onGameClick) {
   const node = document.getElementById("scores-svg");
   if (!node) return;
   const svg = d3.select(node);
   svg.selectAll("*").remove();
 
   const data = games.slice(0, activeIndex + 1);
-  const w = 280, h = Math.max(140, 30 + data.length * 32);
+  const w = 280
+  const h = Math.max(80, 20 + data.length * 22);
   const m = { t: 10, r: 8, b: 8, l: 8 };
   const cx = w / 2;
   const labelW = 40;
   const maxBar = (w / 2) - m.r - labelW / 2;
   svg.attr("viewBox", `0 0 ${w} ${h}`);
 
-  const x = d3.scaleLinear().domain([0, 100]).range([0, maxBar]);
+  const allScores = data.flatMap(d => [d.metascore, d.userscore * 10]);
+  const minScore = Math.max(0, d3.min(allScores) - 5);
+  const x = d3.scaleLinear().domain([minScore, 100]).range([0, maxBar]);
+
   const rowH = (h - m.t - m.b) / Math.max(data.length, 1);
   const barH = Math.min(18, rowH * 0.55);
 
@@ -109,11 +113,17 @@ export function drawScores(games, activeIndex) {
 
   // Meta (left, blue)
   rows.append("rect")
+    .style("cursor", "pointer")
+    .on("click", (_, d) => onGameClick && onGameClick(d))
     .attr("x", d => cx - labelW / 2 - x(d.metascore))
     .attr("y", -barH / 2)
     .attr("width", d => x(d.metascore))
     .attr("height", barH)
-    .attr("fill", "#4a8cff").attr("rx", 2);
+    .attr("fill", "#4a8cff").attr("rx", 2)
+    .on("click", (event, d) => {
+  console.log("click fired", event, d);
+  onGameClick && onGameClick(d);
+});
   rows.append("text")
     .attr("x", d => cx - labelW / 2 - x(d.metascore) - 4).attr("y", 3)
     .attr("text-anchor", "end").attr("fill", "#7aa9ff")
@@ -122,6 +132,8 @@ export function drawScores(games, activeIndex) {
 
   // User (right, red)
   rows.append("rect")
+    .style("cursor", "pointer")
+    .on("click", (_, d) => onGameClick && onGameClick(d))
     .attr("x", cx + labelW / 2).attr("y", -barH / 2)
     .attr("width", d => x(d.userscore * 10))
     .attr("height", barH).attr("fill", "#ff5057").attr("rx", 2);
@@ -130,13 +142,6 @@ export function drawScores(games, activeIndex) {
     .attr("text-anchor", "start").attr("fill", "#ff7a80")
     .style("font-size", "10px").style("font-weight", 600)
     .text(d => d.userscore.toFixed(1));
-
-  // Center labels
-  rows.append("text")
-    .attr("x", cx).attr("y", 3)
-    .attr("text-anchor", "middle").attr("fill", "currentColor")
-    .style("font-size", "9px").style("font-weight", 600)
-    .text(d => `G${d.generation}`);
 }
 
 export function drawLifespan(games, activeIndex) {
@@ -146,7 +151,7 @@ export function drawLifespan(games, activeIndex) {
   svg.selectAll("*").remove();
 
   const data = games.slice(0, activeIndex + 1).map(g => ({
-    name: g.genName.replace("Génération ", "Gen "),
+    name: g.version_group.replace("Génération ", "Gen "),
     v: g.playtime.main,
   }));
 

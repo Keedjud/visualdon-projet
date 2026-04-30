@@ -23,9 +23,16 @@ export function initScroll(games) {
 
   // Initial paint
   drawSales(_games, 0);
-  drawScores(_games, 0);
+  drawScores(_games, 0, handleScoreClick);
   updateConsole(_games[0], 0, true);
   _showChen = true;
+}
+
+function handleScoreClick(game) {
+  const i = _games.indexOf(game);
+  if (i === -1) return;
+  const section = document.getElementById(`game-section-${i}`);
+  if (section) section.scrollIntoView({ behavior: "smooth", block: "center" });
 }
 
 function buildGameSections() {
@@ -114,7 +121,7 @@ function setActive(i, direction = "forward") {
   _activeIndex = i;
   setActiveGame(i);
   drawSales(_games, i, direction);
-  drawScores(_games, i);
+  drawScores(_games, i, handleScoreClick);
   updateConsole(_games[i], _sectionProgress, false);
 }
 
