@@ -1,28 +1,33 @@
 // D3 charts: cumulative sales (top), tornado scores (right), lifespan (pokedex).
 
-export function drawSales(games, activeIndex) {
+let _prevSalesLength = 0;
+
+export function drawSales(games, activeIndex, direction = "forward") {
   const node = document.getElementById("sales-svg");
   if (!node) return;
   const svg = d3.select(node);
   svg.selectAll("*").remove();
 
-  const data = games.slice(0, activeIndex + 1).map(g => ({
-    year: new Date(g.release_date).getFullYear(),
-    v: g.sales,
-    name: g.version_group,
-  }));
+  const data = games.slice(0, activeIndex + 1)
+    .filter(g => g.sales > 0)
+    .map(g => ({
+      year: new Date(g.release_date).getFullYear(),
+      v: g.sales,
+      name: g.version_group,
+    }));
 
   const w = 720, h = 100, m = { t: 8, r: 12, b: 22, l: 32 };
   svg.attr("viewBox", `0 0 ${w} ${h}`);
 
   const [minYear, maxYear] = d3.extent(data, d => d.year);
   const x = d3.scaleLinear()
-  .domain([minYear - 1, maxYear + 1])
+  .domain([minYear - 1, maxYear + 2])
   .range([m.l, w - m.r]);
+  
   const y = d3.scaleLinear().domain([0, 35]).range([h - m.b, m.t]);
 
   svg.append("g").attr("transform", `translate(0,${h - m.b})`)
-    .call(d3.axisBottom(x).tickFormat(d3.format("d")).ticks(6))
+    .call(d3.axisBottom(x).tickFormat(d3.format("d")).ticks(data.length))
     .call(g => g.select(".domain").attr("stroke", "currentColor").attr("stroke-opacity", .3))
     .selectAll("text").attr("fill", "currentColor").style("font-size", "9px");
 
@@ -32,23 +37,47 @@ export function drawSales(games, activeIndex) {
     .call(g => g.selectAll("line").attr("stroke", "currentColor").attr("stroke-opacity", .1))
     .selectAll("text").attr("fill", "currentColor").style("font-size", "9px");
 
+  if (data.length <= 1) {
+    _prevSalesLength = 0; 
+
+    return;
+  }
+
   if (data.length > 1) {
     const line = d3.line().x(d => x(d.year)).y(d => y(d.v)).curve(d3.curveMonotoneX);
-    svg.append("path").datum(data)
-      .attr("fill", "none").attr("stroke", "#ff5057")
-      .attr("stroke-width", 2.5).attr("d", line);
+    const path = svg.append("path").datum(data)
+      .attr("fill", "none")
+      .attr("stroke", "#ff5057")
+      .attr("stroke-width", 2.5)
+      .attr("d", line);
+
+    const totalLength = path.node().getTotalLength();
+
+    console.log("prevLength:", _prevSalesLength, "totalLength:", totalLength);
+
+    if (direction === "forward") {
+      path
+        .attr("stroke-dasharray", totalLength)
+        .attr("stroke-dashoffset", totalLength - _prevSalesLength)
+        .transition().duration(800).ease(d3.easeCubicInOut)
+        .attr("stroke-dashoffset", 0);
+    } else {
+      path.attr("stroke-dasharray", "none");
+    }
+
+    _prevSalesLength = totalLength;
   }
 
   svg.selectAll("circle").data(data).join("circle")
     .attr("cx", d => x(d.year)).attr("cy", d => y(d.v))
-    .attr("r", 4).attr("fill", "#ffc828").attr("stroke", "#ff5057").attr("stroke-width", 2);
+    .attr("r", d => d.v > 0 ? 4 : 0).attr("fill", "#ffc828").attr("stroke", "#ff5057").attr("stroke-width", 2);
 
   svg.selectAll("text.lbl").data(data).join("text")
     .attr("class", "lbl")
     .attr("x", d => x(d.year)).attr("y", d => y(d.v) - 8)
     .attr("text-anchor", "middle").attr("fill", "#ffc828")
     .style("font-size", "9px").style("font-weight", 600)
-    .text(d => `${d.v.toFixed(1)}M`);
+    .text(d => d.v > 0 ? `${d.v.toFixed(1)}M` : "");
 }
 
 export function drawScores(games, activeIndex) {

@@ -16,7 +16,7 @@
       "extra": 24.5,
       "completion": 48.5
     },
-    "release_date": "16-10-2025",
+    "release_date": "2025-10-16",
     "price": 0,
     "console": "Switch",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/scarlet-violet/normal/pikachu.png",
@@ -41,32 +41,7 @@
       "extra": 40,
       "completion": 64
     },
-    "release_date": "16-10-2025",
-    "price": 0,
-    "console": "Switch",
-    "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/scarlet-violet/normal/pikachu.png",
-      "anecdotes": [
-        { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
-        { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
-      ]
-  },
-  {
-    "id": 25,
-    "generation": "IX",
-    "version_group": "Pokémon Écarlate et Violet: Le Disque Indigo",
-    "region": "Paldea",
-    "game_type": "DLC",
-    "sales": 0,
-    "metascore": 70.00,
-    "userscore": 5.10,
-    "new_pokemon_count": 8,
-    "gameplay_mechanics": [" "],
-    "playtime": {
-      "main": 9,
-      "extra": 15,
-      "completion": 31
-    },
-    "release_date": "14-12-23",
+    "release_date": "2025-10-16",
     "price": 0,
     "console": "Switch",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/scarlet-violet/normal/pikachu.png",
@@ -78,20 +53,20 @@
     {
     "id": 24,
     "generation": "IX",
-    "version_group": "Pokémon Écarlate et Violet: Le Masque Turquoise",
+    "version_group": "Pokémon Écarlate et Violet: Le trésor enfoui de la zone Zéro",
     "region": "Paldea",
     "game_type": "DLC",
-    "sales": 0,
-    "metascore": 65.00,
-    "userscore": 4.80,
-    "new_pokemon_count": 7,
+    "sales": 6.15,
+    "metascore": 67.50,
+    "userscore": 4.95,
+    "new_pokemon_count": 15,
     "gameplay_mechanics": [" "],
     "playtime": {
-      "main": 6.5,
-      "extra": 10.5,
-      "completion": 15
+      "main": 15.5,
+      "extra": 25.5,
+      "completion": 46
     },
-    "release_date": "13-09-23",
+    "release_date": "2023-09-13",
     "price": 29.99,
     "console": "Switch",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/scarlet-violet/normal/pikachu.png",
@@ -116,7 +91,7 @@
       "extra": 51.5,
       "completion": 91
     },
-    "release_date": "18-11-2022",
+    "release_date": "2022-11-18",
     "price": 59.99,
     "console": "Switch",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/scarlet-violet/normal/pikachu.png",
@@ -141,7 +116,7 @@
       "extra": 45,
       "completion": 80
     },
-    "release_date": "28-01-2022",
+    "release_date": "2022-01-28",
     "price": 59.99,
     "console": "Switch",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/sword-shield/normal/pikachu.png",
@@ -166,33 +141,8 @@
       "extra": 43,
       "completion": 111
     },
-    "release_date": "19-11-2021",
+    "release_date": "2021-11-19",
     "price": 59.99,
-    "console": "Switch",
-    "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/sword-shield/normal/pikachu.png",
-      "anecdotes": [
-        { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
-        { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
-      ]
-  },
-    {
-    "id": 20,
-    "generation": "VIII",
-    "version_group": "Pokémon Épée et Bouclier: Les Terres Enneigées de la Couronne",
-    "region": "Galar",
-    "game_type": "DLC",
-    "sales": 0,
-    "metascore": 75.00,
-    "userscore": 6.30,
-    "new_pokemon_count": 5,
-    "gameplay_mechanics": [" "],
-    "playtime": {
-      "main": 6,
-      "extra": 12,
-      "completion": 30
-    },
-    "release_date": "22-10-2020",
-    "price": 0,
     "console": "Switch",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/sword-shield/normal/pikachu.png",
       "anecdotes": [
@@ -203,20 +153,20 @@
     {
     "id": 19,
     "generation": "VIII",
-    "version_group": "Pokémon Épée et Bouclier: L'île Solitaire de l'Armure",
+    "version_group": "Pokémon Épée et Bouclier: Expansion Pass",
     "region": "Galar",
     "game_type": "DLC",
     "sales": 0,
-    "metascore": 69.00,
-    "userscore": 4.80,
-    "new_pokemon_count": 5,
+    "metascore": 72.00,
+    "userscore": 11.10,
+    "new_pokemon_count": 10,
     "gameplay_mechanics": [" "],
     "playtime": {
-      "main": 5,
-      "extra": 10,
-      "completion": 18
+      "main": 11,
+      "extra": 22,
+      "completion": 48
     },
-    "release_date": "17-06-2020",
+    "release_date": "2020-06-17",
     "price": 29.99,
     "console": "Switch",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/sword-shield/normal/pikachu.png",
@@ -241,7 +191,7 @@
       "extra": 45,
       "completion": 110
     },
-    "release_date": "15-11-2019",
+    "release_date": "2019-11-15",
     "price": 59.99,
     "console": "Switch",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/sword-shield/normal/pikachu.png",
@@ -266,7 +216,7 @@
       "extra": 35.5,
       "completion": 54.5
     },
-    "release_date": "16-11-2018",
+    "release_date": "2018-11-16",
     "price": 59.99,
     "console": "Switch",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/sun-moon/normal/pikachu-f.png",
@@ -291,7 +241,7 @@
       "extra": 57,
       "completion": 132
     },
-    "release_date": "17-11-2017",
+    "release_date": "2017-11-17",
     "price": 39.99,
     "console": "Nintendo 3DS",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/sun-moon/normal/pikachu-f.png",
@@ -316,7 +266,7 @@
       "extra": 60,
       "completion": 143
     },
-    "release_date": "18-11-2016",
+    "release_date": "2016-11-18",
     "price": 39.99,
     "console": "Nintendo 3DS",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/sun-moon/normal/pikachu-f.png",
@@ -341,7 +291,7 @@
       "extra": 52.5,
       "completion": 176
     },
-    "release_date": "21-11-2014",
+    "release_date": "2014-11-21",
     "price": 39.99,
     "console": "Nintendo 3DS",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/x-y/normal/pikachu-f.png",
@@ -366,7 +316,7 @@
       "extra": 69.5,
       "completion": 205
     },
-    "release_date": "12-10-2013",
+    "release_date": "2013-10-12",
     "price": 39.99,
     "console": "Nintendo 3DS",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/x-y/normal/pikachu-f.png",
@@ -391,7 +341,7 @@
       "extra": 64,
       "completion": 190
     },
-    "release_date": "07-10-2012",
+    "release_date": "2012-10-07",
     "price": 34.90,
     "console": "Nintendo DS",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/black-white/normal/pikachu-f.png",
@@ -416,7 +366,7 @@
       "extra": 60.5,
       "completion": 162
     },
-    "release_date": "06-03-2011",
+    "release_date": "2011-03-06",
     "price": 34.90,
     "console": "Nintendo DS",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/black-white/normal/pikachu-f.png",
@@ -441,7 +391,7 @@
       "extra": 71,
       "completion": 211
     },
-    "release_date": "14-03-2010",
+    "release_date": "2010-03-14",
     "price": 34.90,
     "console": "Nintendo DS",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/diamond-pearl/normal/pikachu-f.png",
@@ -466,7 +416,7 @@
       "extra": 68.5,
       "completion": 224
     },
-    "release_date": "22-03-2009",
+    "release_date": "2009-03-22",
     "price": 34.90,
     "console": "Nintendo DS",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/diamond-pearl/normal/pikachu-f.png",
@@ -491,7 +441,7 @@
       "extra": 91,
       "completion": 271
     },
-    "release_date": "28-04-2007",
+    "release_date": "2007-04-28",
     "price": 34.90,
     "console": "Nintendo DS",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/diamond-pearl/normal/pikachu-f.png",
@@ -516,7 +466,7 @@
       "extra": 65,
       "completion": 217
     },
-    "release_date": "30-04-2005",
+    "release_date": "2005-04-30",
     "price": 34.90,
     "console": "Game Boy Advance",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/ruby-sapphire/normal/pikachu.png",
@@ -541,7 +491,7 @@
       "extra": 49,
       "completion": 139
     },
-    "release_date": "07-09-2004",
+    "release_date": "2004-09-07",
     "price": 34.90,
     "console": "Game Boy Advance",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/ruby-sapphire/normal/pikachu.png",
@@ -566,7 +516,7 @@
       "extra": 74,
       "completion": 205
     },
-    "release_date": "17-03-2003",
+    "release_date": "2003-03-17",
     "price": 34.90,
     "console": "Game Boy Advance",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/ruby-sapphire/normal/pikachu.png",
@@ -591,7 +541,7 @@
       "extra": 50,
       "completion": 135
     },
-    "release_date": "29-07-2001",
+    "release_date": "2001-07-29",
     "price": 29.90,
     "console": "Game Boy",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/silver/normal/pikachu.png",
@@ -616,7 +566,7 @@
       "extra": 64,
       "completion": 156
     },
-    "release_date": "14-10-2000",
+    "release_date": "2000-10-14",
     "price": 29.90,
     "console": "Game Boy",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/silver/normal/pikachu.png",
@@ -641,7 +591,7 @@
       "extra": 41.5,
       "completion": 78.5
     },
-    "release_date": "19-09-1999",
+    "release_date": "1999-09-19",
     "price": 29.90,
     "console": "Game Boy",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/red-blue/normal/pikachu.png",
@@ -666,7 +616,7 @@
       "extra": 43.5,
       "completion": 98.5
     },
-    "release_date": "30-09-1998",
+    "release_date": "1998-09-30",
     "price": 29.90,
     "console": "Game Boy",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/red-blue/normal/pikachu.png",
