@@ -57,6 +57,7 @@
   height: 100vh;
   width: 100%;
   overflow: visible;
+  pointer-events: none;
 }
 
 #tutorials { position: relative; margin-top: -100vh; }
@@ -69,6 +70,7 @@
   padding: 40vh 1.5rem;
   display: flex; flex-direction: column;
   justify-content: space-around;
+  pointer-events: auto;
 }
 .anecdote {
   position: relative;
@@ -103,6 +105,7 @@
   padding: .75rem;
   z-index: 20;
   transition: all .5s ease;
+  pointer-events: auto;
 }
 .chart-box--top {
   top: 1.5rem;
@@ -128,14 +131,14 @@
 
 .chart-label {
   font-family: var(--font-display);
-  font-size: 10px;
+  font-size: 9px;
   text-transform: uppercase;
   color: var(--muted);
   margin-bottom: .25rem;
 }
-.chart-label.center { text-align: center; margin-bottom: .5rem; }
+.chart-label.center { text-align: center; margin-bottom: .3rem; }
 
-#sales-svg, #scores-svg, #lifespan-svg { width: 100%; color: var(--muted); }
+#sales-svg, #scores-svg, #lifespan-svg { width: 100%; color: var(--muted);}
 
 /* Professor overlay (tutorials, fixed) */
 .prof-overlay {
