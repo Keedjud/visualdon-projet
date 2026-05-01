@@ -243,7 +243,7 @@
     },
     "release_date": "2017-11-17",
     "price": 39.99,
-    "console": "Nintendo 3DS",
+    "console": "Nintendo_3DS",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/sun-moon/normal/pikachu-f.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
@@ -268,7 +268,7 @@
     },
     "release_date": "2016-11-18",
     "price": 39.99,
-    "console": "Nintendo 3DS",
+    "console": "Nintendo_3DS",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/sun-moon/normal/pikachu-f.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
@@ -293,7 +293,7 @@
     },
     "release_date": "2014-11-21",
     "price": 39.99,
-    "console": "Nintendo 3DS",
+    "console": "Nintendo_3DS",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/x-y/normal/pikachu-f.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
@@ -318,7 +318,7 @@
     },
     "release_date": "2013-10-12",
     "price": 39.99,
-    "console": "Nintendo 3DS",
+    "console": "Nintendo_3DS",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/x-y/normal/pikachu-f.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
@@ -343,7 +343,7 @@
     },
     "release_date": "2012-10-07",
     "price": 34.90,
-    "console": "Nintendo DS",
+    "console": "Nintendo_DS",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/black-white/normal/pikachu-f.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
@@ -368,7 +368,7 @@
     },
     "release_date": "2011-03-06",
     "price": 34.90,
-    "console": "Nintendo DS",
+    "console": "Nintendo_DS",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/black-white/normal/pikachu-f.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
@@ -393,7 +393,7 @@
     },
     "release_date": "2010-03-14",
     "price": 34.90,
-    "console": "Nintendo DS",
+    "console": "Nintendo_DS",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/diamond-pearl/normal/pikachu-f.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
@@ -418,7 +418,7 @@
     },
     "release_date": "2009-03-22",
     "price": 34.90,
-    "console": "Nintendo DS",
+    "console": "Nintendo_DS",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/diamond-pearl/normal/pikachu-f.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
@@ -443,7 +443,7 @@
     },
     "release_date": "2007-04-28",
     "price": 34.90,
-    "console": "Nintendo DS",
+    "console": "Nintendo_DS",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/diamond-pearl/normal/pikachu-f.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
@@ -468,7 +468,7 @@
     },
     "release_date": "2005-04-30",
     "price": 34.90,
-    "console": "Game Boy Advance",
+    "console": "Game_boy_advance",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/ruby-sapphire/normal/pikachu.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
@@ -493,7 +493,7 @@
     },
     "release_date": "2004-09-07",
     "price": 34.90,
-    "console": "Game Boy Advance",
+    "console": "Game_boy_advance",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/ruby-sapphire/normal/pikachu.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
@@ -518,7 +518,7 @@
     },
     "release_date": "2003-03-17",
     "price": 34.90,
-    "console": "Game Boy Advance",
+    "console": "Game_boy_advance",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/ruby-sapphire/normal/pikachu.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
@@ -543,7 +543,7 @@
     },
     "release_date": "2001-07-29",
     "price": 29.90,
-    "console": "Game Boy",
+    "console": "Game_boy_color",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/silver/normal/pikachu.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
@@ -568,7 +568,7 @@
     },
     "release_date": "2000-10-14",
     "price": 29.90,
-    "console": "Game Boy",
+    "console": "Game_boy_color",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/silver/normal/pikachu.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
@@ -593,7 +593,7 @@
     },
     "release_date": "1999-09-19",
     "price": 29.90,
-    "console": "Game Boy",
+    "console": "Game_boy",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/red-blue/normal/pikachu.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
@@ -618,7 +618,7 @@
     },
     "release_date": "1998-09-30",
     "price": 29.90,
-    "console": "Game Boy",
+    "console": "Game_boy",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/red-blue/normal/pikachu.png",
       "anecdotes": [
         { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },

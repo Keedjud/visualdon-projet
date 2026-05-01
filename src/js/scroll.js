@@ -24,7 +24,7 @@ export function initScroll(games) {
   // Initial paint
   drawSales(_games, 0);
   drawScores(_games, 0, handleScoreClick);
-  updateConsole(_games[0], 0, true);
+  updateConsole(_games[0], _games, 0, 0, true);
   _showChen = true;
 }
 
@@ -110,7 +110,7 @@ function setupGameTriggers() {
       onUpdate: (self) => {
         _sectionProgress = self.progress;
         const game = _games[_activeIndex];
-        updateConsole(game, _sectionProgress, _showChen && _activeIndex === 0 && _sectionProgress < 0.25);
+        updateConsole(game, _games, _activeIndex, _sectionProgress, _showChen && _activeIndex === 0 && _sectionProgress < 0.25);
       },
     });
   });
@@ -122,7 +122,7 @@ function setActive(i, direction = "forward") {
   setActiveGame(i);
   drawSales(_games, i, direction);
   drawScores(_games, i, handleScoreClick);
-  updateConsole(_games[i], _sectionProgress, false);
+  updateConsole(_games[i], _games, i, _sectionProgress, false);
 }
 
 function escapeHtml(s) {
