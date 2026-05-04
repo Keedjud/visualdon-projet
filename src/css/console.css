@@ -27,7 +27,6 @@
 
 .screen-overlay {
   position: absolute;
-  top: 18%; left: 18%; right: 18%; bottom: 42%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,6 +39,7 @@
   width: 100%;
   height: 100%;
 }
+
 .pikachu-grid img {
   position: absolute;
   height: auto;
