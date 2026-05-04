@@ -2,12 +2,12 @@ import { gsap } from "./gsap.js";
 
 // Console transitions + pikachu grid update.
 const SCREEN_POSITIONS = {
-  "Game_boy":          { top: "32%", left: "42%", right: "42%", bottom: "68%", spriteSize: 12 },
-  "Game_boy_color":    { top: "0%", left: "42%", right: "42%", bottom: "50%", spriteSize: 12 },
-  "Game_boy_advance":  { top: "0%", left: "35%", right: "35%", bottom: "10%", spriteSize: 18 },
-  "Nintendo_DS":       { top: "0%", left: "37%", right: "37%", bottom: "50%", spriteSize: 14 },
-  "Nintendo_3DS":      { top: "0%", left: "33%", right: "33%", bottom: "50%", spriteSize: 16 },
-  "Switch":            { top: "0%", left: "15%", right: "15%", bottom: "0%", spriteSize: 30 },
+  "Game_boy": { top: "15%", left: "41%", right: "41%", bottom: "55%", spriteSize: 12 },
+  "Game_boy_color": { top: "11%", left: "41%", right: "41%", bottom: "60%", spriteSize: 12 },
+  "Game_boy_advance": { top: "22%", left: "30%", right: "30%", bottom: "33%", spriteSize: 18 },
+  "Nintendo_DS": { top: "8%", left: "36%", right: "36%", bottom: "8%", spriteSize: 14 },
+  "Nintendo_3DS": { top: "8%", left: "36%", right: "36%", bottom: "8%", spriteSize: 16 },
+  "Switch": { top: "20%", left: "20%", right: "20%", bottom: "20%", spriteSize: 30 },
 };
 
 let prevConsole = null;
@@ -21,17 +21,26 @@ export function updateConsole(game, games, gameIndex, scrollProgress, showChen) 
   const grid = document.getElementById("pikachu-grid");
   const chen = document.getElementById("chen-bubble");
   const overlay = document.getElementById("screen-overlay");
+  const pos = SCREEN_POSITIONS[game.console] ?? SCREEN_POSITIONS["Game_boy"];
 
   bannerGen.textContent = game.generation;
   bannerTitle.textContent = game.version_group;
 
-  const pos = SCREEN_POSITIONS[game.console] ?? SCREEN_POSITIONS["Game_boy"];
-  overlay.style.top = pos.top;
-  overlay.style.left = pos.left;
-  overlay.style.right = pos.right;
-  overlay.style.bottom = pos.bottom;
+  const consoleImg = document.getElementById("console-img");
+  const imgW = consoleImg.offsetWidth;
+  const imgH = consoleImg.offsetHeight;
 
-  // Console swap with pixelisation
+  const topPx = (parseFloat(pos.top) / 100) * imgH;
+  const leftPx = (parseFloat(pos.left) / 100) * imgW;
+  const rightPx = (parseFloat(pos.right) / 100) * imgW;
+  const bottomPx = (parseFloat(pos.bottom) / 100) * imgH;
+  overlay.style.top = topPx + "px";
+  overlay.style.left = leftPx + "px";
+  overlay.style.width = (imgW - leftPx - rightPx) + "px";
+  overlay.style.height = (imgH - topPx - bottomPx) + "px";
+  overlay.style.right = "auto";
+  overlay.style.bottom = "auto";
+
   if (prevConsole !== game.console) {
     if (prevConsole !== null) {
       pixelTransition(img, `/src/assets/consoles/${game.console}.png`);
@@ -39,11 +48,17 @@ export function updateConsole(game, games, gameIndex, scrollProgress, showChen) 
       img.src = `/src/assets/consoles/${game.console}.png`;
     }
     prevConsole = game.console;
+    repositionPikachus(grid, pos.spriteSize);
   }
 
-  const totalPikachuCount = games
+  const previousCount = games
   .slice(0, gameIndex + 1)
-  .reduce((sum, g) => sum + Math.floor(g.new_pokemon_count / 20), 0);
+  .reduce((sum, g) => sum + Math.floor(g.new_pokemon_count / 10), 0);
+
+  const currentGameCount = Math.floor(game.new_pokemon_count / 10);
+  const visibleCurrent = Math.floor(scrollProgress * (currentGameCount + 1));
+
+  const totalPikachuCount = previousCount + Math.min(currentGameCount, visibleCurrent);
 
   if (showChen) {
     chen.classList.remove("hidden");
@@ -85,7 +100,6 @@ export function updateConsole(game, games, gameIndex, scrollProgress, showChen) 
     const ctx = canvas.getContext("2d");
     ctx.imageSmoothingEnabled = false;
 
-    // Canvas intermédiaire pour le resize propre
     const offscreen = document.createElement("canvas");
     offscreen.width = w; offscreen.height = h;
     const off = offscreen.getContext("2d");
@@ -108,12 +122,10 @@ export function updateConsole(game, games, gameIndex, scrollProgress, showChen) 
 
           const source = p < 0.5 ? currentImg : newImg;
 
-          // Dessine en petite taille sur offscreen
-          // Dessine en petite taille sur offscreen
+          
           off.clearRect(0, 0, w, h);
           off.drawImage(source, 0, 0, sw, sh);
 
-          // Étire toujours à pleine taille (w × h) — pas de rétrécissement
           ctx.clearRect(0, 0, w, h);
           ctx.drawImage(offscreen, 0, 0, sw, sh, 0, 0, w, h);
         },
@@ -138,18 +150,31 @@ function renderPikachus(grid, src, count, spriteSize = 20) {
   const currentCount = Number(grid.dataset.count) || 0;
   const sameSrc = grid.dataset.src === src;
 
-  // Si le sprite change, met à jour tous les imgs existants
   if (!sameSrc) {
-    Array.from(grid.children).forEach(img => img.src = src);
+    Array.from(grid.children).forEach(img => {
+      img.src = src;
+      img.style.width = spriteSize + "px";
+    });
     grid.dataset.src = src;
   }
 
   if (currentCount === count) return;
 
+  if (count < currentCount) {
+    while (grid.children.length > count) {
+      grid.removeChild(grid.lastChild);
+    }
+    const positions = JSON.parse(grid.dataset.positions || "[]");
+    grid.dataset.positions = JSON.stringify(positions.slice(0, count));
+    grid.dataset.count = String(count);
+    return;
+  }
+
   const SPRITE_SIZE = spriteSize;
   const MIN_DIST = spriteSize * 1.5;
-  const w = grid.offsetWidth || 280;
-  const h = grid.offsetHeight || 200;
+  const overlay = grid.closest(".screen-overlay") || grid.parentElement;
+  const w = overlay.offsetWidth || 280;
+  const h = overlay.offsetHeight || 200;
   const positions = JSON.parse(grid.dataset.positions || "[]");
 
   const frag = document.createDocumentFragment();
@@ -174,6 +199,10 @@ function renderPikachus(grid, src, count, spriteSize = 20) {
     img.style.top = y + "px";
     img.style.width = spriteSize + "px";
     img.classList.add("pikachu-new");
+    frag.appendChild(img);
+
+
+    animatePikachu(img, w, h, spriteSize);
 
     const updateAnimation = () => {
     const animations = ["wobbleTop", "wobbleLeft", "wobbleRight"];
@@ -200,4 +229,53 @@ function renderPikachus(grid, src, count, spriteSize = 20) {
   grid.appendChild(frag);
   grid.dataset.count = String(count);
   grid.dataset.positions = JSON.stringify(positions);
+}
+
+function repositionPikachus(grid, spriteSize = 20) {
+  const imgs = Array.from(grid.children);
+  if (imgs.length === 0) return;
+
+  const w = grid.offsetWidth || 280;
+  const h = grid.offsetHeight || 200;
+  const MIN_DIST = spriteSize * 1.5;
+  const positions = [];
+
+  imgs.forEach(img => {
+    let x, y, attempts = 0, ok = false;
+
+    gsap.killTweensOf(img);
+    animatePikachu(img, w, h, spriteSize);
+
+    while (attempts < 200 && !ok) {
+      x = Math.random() * (w - spriteSize);
+      y = Math.random() * (h - spriteSize);
+      ok = positions.every(p => Math.hypot(p.x - x, p.y - y) >= MIN_DIST);
+      attempts++;
+    }
+
+    positions.push({ x, y });
+    img.style.left = x + "px";
+    img.style.top = y + "px";
+    img.style.width = spriteSize + "px";
+  });
+
+  grid.dataset.positions = JSON.stringify(positions);
+}
+
+function animatePikachu(img, w, h, spriteSize) {
+  const moveToNew = () => {
+    const x = Math.random() * (w - spriteSize);
+    const y = Math.random() * (h - spriteSize);
+    const duration = 1.5 + Math.random() * 2.5; 
+
+    gsap.to(img, {
+      left: x + "px",
+      top: y + "px",
+      duration,
+      ease: "sine.inOut",
+      onComplete: moveToNew,
+    });
+  };
+
+  gsap.delayedCall(Math.random() * 2, moveToNew);
 }

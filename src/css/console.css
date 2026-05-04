@@ -17,8 +17,8 @@
   width: min(650px, 90vw);
   height: auto;
   display: block;
-  filter: drop-shadow(0 20px 40px rgba(0,0,0,.5));
-  transition: filter .3s ease;
+  /* filter: drop-shadow(0 20px 40px rgba(0,0,0,.5));
+  transition: filter .3s ease; */
 }
 .console-img.pixelating {
   image-rendering: pixelated;
@@ -27,18 +27,19 @@
 
 .screen-overlay {
   position: absolute;
-  top: 18%; left: 18%; right: 18%; bottom: 42%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .pikachu-grid {
-  position: relative;
+  position: absolute;
+  inset: 0;
+  max-width: none;
   width: 100%;
-  max-width: 280px;
-  height: 200px;
+  height: 100%;
 }
+
 .pikachu-grid img {
   position: absolute;
   height: auto;
