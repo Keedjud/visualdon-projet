@@ -7,10 +7,16 @@
   justify-content: center;
   pointer-events: none;
 }
-.console-wrap { position: relative; }
+.console-wrap { 
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .console-img {
-  width: min(520px, 80vw);
+  width: min(650px, 90vw);
   height: auto;
+  display: block;
   filter: drop-shadow(0 20px 40px rgba(0,0,0,.5));
   transition: filter .3s ease;
 }
@@ -28,19 +34,30 @@
 }
 
 .pikachu-grid {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  gap: 2px;
+  position: relative;
   width: 100%;
   max-width: 280px;
+  height: 200px;
 }
 .pikachu-grid img {
-  width: 100%;
+  position: absolute;
   height: auto;
   image-rendering: pixelated;
-  animation: fadeIn .4s ease-out;
 }
 @keyframes fadeIn { from { opacity: 0; transform: scale(.5); } to { opacity: 1; transform: scale(1); } }
+
+@keyframes wobbleLeft {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-3px); }
+}
+@keyframes wobbleRight {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(3px); }
+}
+@keyframes wobbleTop {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
 
 .chen-bubble {
   display: flex;

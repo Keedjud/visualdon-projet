@@ -24,9 +24,16 @@ export function initScroll(games) {
 
   // Initial paint
   drawSales(_games, 0);
-  drawScores(_games, 0);
-  updateConsole(_games[0], 0, true);
+  drawScores(_games, 0, handleScoreClick);
+  updateConsole(_games[0], _games, 0, 0, true);
   _showChen = true;
+}
+
+function handleScoreClick(game) {
+  const i = _games.indexOf(game);
+  if (i === -1) return;
+  const section = document.getElementById(`game-section-${i}`);
+  if (section) section.scrollIntoView({ behavior: "smooth", block: "center" });
 }
 
 function buildGameSections() {
@@ -87,13 +94,13 @@ function setupGameTriggers() {
       start: "top center",
       end: "bottom center",
       onEnter: () => {
-        setActive(i);
-        setNotification(true);
-        if (i > 0) _showChen = false;
+      setActive(i, "forward");
+      setNotification(true);
+      if (i > 0) _showChen = false;
       },
       onEnterBack: () => {
-        setActive(i);
-        if (i === 0) _showChen = true;
+      setActive(i, "backward");
+      if (i === 0) _showChen = true;
       },
     });
     ScrollTrigger.create({
@@ -104,19 +111,19 @@ function setupGameTriggers() {
       onUpdate: (self) => {
         _sectionProgress = self.progress;
         const game = _games[_activeIndex];
-        updateConsole(game, _sectionProgress, _showChen && _activeIndex === 0 && _sectionProgress < 0.25);
+        updateConsole(game, _games, _activeIndex, _sectionProgress, _showChen && _activeIndex === 0 && _sectionProgress < 0.25);
       },
     });
   });
 }
 
-function setActive(i) {
+function setActive(i, direction = "forward") {
   if (_activeIndex === i) return;
   _activeIndex = i;
   setActiveGame(i);
-  drawSales(_games, i);
-  drawScores(_games, i);
-  updateConsole(_games[i], _sectionProgress, false);
+  drawSales(_games, i, direction);
+  drawScores(_games, i, handleScoreClick);
+  updateConsole(_games[i], _games, i, _sectionProgress, false);
 }
 
 function escapeHtml(s) {
