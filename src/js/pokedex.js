@@ -109,6 +109,11 @@ export function setActiveGame(i) {
 }
 
 export function setNotification(on) {
+  if (_isOpen && on) {
+    _hasNotif = false;
+    document.getElementById("pokedex-notif").classList.remove("show");
+    return;
+  }
   _hasNotif = on;
   document.getElementById("pokedex-notif").classList.toggle("show", on);
 }
