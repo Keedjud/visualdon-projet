@@ -57,20 +57,20 @@
   height: 100vh;
   width: 100%;
   overflow: visible;
-  pointer-events: none;
+  pointer-events: auto;
 }
 
-#tutorials { position: relative; margin-top: -100vh; }
-.tuto-section { position: relative; min-height: 100vh; }
+#tutorials { position: relative; margin-top: -100vh; pointer-events: none; }
+.tuto-section { position: relative; min-height: 100vh; pointer-events: none; }
 
-#game-sections { position: relative; }
+#game-sections { position: relative; pointer-events: none; }
 .game-section {
   position: relative;
   min-height: 200vh;
   padding: 40vh 1.5rem;
   display: flex; flex-direction: column;
   justify-content: space-around;
-  pointer-events: auto;
+  pointer-events: none;
 }
 .anecdote {
   position: relative;
@@ -82,6 +82,7 @@
   padding: 1.25rem;
   box-shadow: var(--shadow-card);
   z-index: 30;
+  pointer-events: auto;
 }
 .anecdote--left { align-self: flex-start; margin-left: clamp(1rem, 5vw, 3rem); border-color: var(--poke-blue); }
 .anecdote--right { align-self: flex-end; margin-right: clamp(1rem, 5vw, 3rem); border-color: var(--poke-yellow); }
@@ -178,6 +179,40 @@
 }
 
 #lifespan-svg .lifespan-label-bg {
+  fill: rgba(38, 28, 56, 0.9);
+  stroke: var(--border);
+  stroke-width: 1;
+}
+
+#scores-svg .scores-bar {
+  transition: stroke 0.2s ease, filter 0.2s ease;
+}
+
+#scores-svg .row.is-active .scores-bar {
+  stroke: rgba(255, 255, 255, 0.75);
+  stroke-width: 1.5;
+  filter: drop-shadow(0 0 4px rgba(255, 200, 40, 0.35));
+}
+
+#scores-svg .scores-label-text {
+  font-size: 9px;
+  font-weight: 600;
+  fill: var(--fg);
+  paint-order: stroke;
+  stroke: rgba(0, 0, 0, 0.6);
+  stroke-width: 2;
+}
+
+#scores-svg .scores-label-title {
+  font-family: var(--font-display);
+}
+
+#scores-svg .scores-label-gen {
+  font-size: 8px;
+  fill: var(--muted);
+}
+
+#scores-svg .scores-label-bg {
   fill: rgba(38, 28, 56, 0.9);
   stroke: var(--border);
   stroke-width: 1;

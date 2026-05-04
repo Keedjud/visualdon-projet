@@ -54,8 +54,6 @@ export function drawSales(games, activeIndex, direction = "forward") {
 
     const totalLength = path.node().getTotalLength();
 
-    console.log("prevLength:", _prevSalesLength, "totalLength:", totalLength);
-
     if (direction === "forward") {
       path
         .attr("stroke-dasharray", totalLength)
@@ -87,7 +85,8 @@ export function drawScores(games, activeIndex, onGameClick) {
   const svg = d3.select(node);
   svg.selectAll("*").remove();
 
-  const data = games.slice(0, activeIndex + 1);
+  const data = games.slice(0, activeIndex + 1)
+    .map((game, index) => ({ ...game, index }));
   const w = 280
   const h = Math.max(80, 20 + data.length * 22);
   const m = { t: 10, r: 8, b: 8, l: 8 };
@@ -112,19 +111,58 @@ export function drawScores(games, activeIndex, onGameClick) {
     .attr("class", "row")
     .attr("transform", (_, i) => `translate(0, ${m.t + i * rowH + rowH / 2})`);
 
+  const label = svg.append("g")
+    .attr("class", "scores-label")
+    .attr("transform", `translate(${cx}, ${h / 2})`)
+    .style("opacity", 0)
+    .style("pointer-events", "none");
+
+  const labelBg = label.append("rect")
+    .attr("class", "scores-label-bg")
+    .attr("rx", 6)
+    .attr("ry", 6);
+
+  const labelText = label.append("text")
+    .attr("class", "scores-label-text")
+    .attr("text-anchor", "middle")
+    .attr("dy", "0.35em");
+
+  const showLabel = (row, d) => {
+    rows.classed("is-active", false);
+    row.classed("is-active", true);
+
+    label.attr("transform", `translate(${cx}, ${m.t + d.index * rowH + rowH / 2})`);
+    labelText.text(`Gen ${d.generation} - ${d.version_group}`);
+    label.style("opacity", 1);
+
+    const textNode = labelText.node();
+    if (textNode) {
+      const box = textNode.getBBox();
+      labelBg
+        .attr("x", box.x - 8)
+        .attr("y", box.y - 6)
+        .attr("width", box.width + 16)
+        .attr("height", box.height + 12);
+    }
+  };
+
+  const hideLabel = row => {
+    row.classed("is-active", false);
+    label.style("opacity", 0);
+  };
+
   // Meta (left, blue)
   rows.append("rect")
+    .attr("class", "scores-bar scores-bar--meta")
     .style("cursor", "pointer")
-    .on("click", (_, d) => onGameClick && onGameClick(d))
     .attr("x", d => cx - labelW / 2 - x(d.metascore))
     .attr("y", -barH / 2)
     .attr("width", d => x(d.metascore))
     .attr("height", barH)
     .attr("fill", "#4a8cff").attr("rx", 2)
     .on("click", (event, d) => {
-  console.log("click fired", event, d);
-  onGameClick && onGameClick(d);
-});
+      onGameClick && onGameClick(d);
+    });
   rows.append("text")
     .attr("x", d => cx - labelW / 2 - x(d.metascore) - 4).attr("y", 3)
     .attr("text-anchor", "end").attr("fill", "#7aa9ff")
@@ -133,6 +171,7 @@ export function drawScores(games, activeIndex, onGameClick) {
 
   // User (right, red)
   rows.append("rect")
+    .attr("class", "scores-bar scores-bar--user")
     .style("cursor", "pointer")
     .on("click", (_, d) => onGameClick && onGameClick(d))
     .attr("x", cx + labelW / 2).attr("y", -barH / 2)
@@ -143,6 +182,16 @@ export function drawScores(games, activeIndex, onGameClick) {
     .attr("text-anchor", "start").attr("fill", "#ff7a80")
     .style("font-size", "10px").style("font-weight", 600)
     .text(d => d.userscore.toFixed(1));
+
+  rows.on("mouseover", function (event, d) {
+    if (this.contains(event.relatedTarget)) return;
+    showLabel(d3.select(this), d);
+  });
+
+  rows.on("mouseout", function (event) {
+    if (this.contains(event.relatedTarget)) return;
+    hideLabel(d3.select(this));
+  });
 }
 
 export function drawLifespan(games, activeIndex) {
