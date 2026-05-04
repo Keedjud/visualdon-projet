@@ -1,4 +1,5 @@
 // Pokédex: drag, open/close, intro fly animation, content update.
+import { gsap, ScrollTrigger } from "./gsap.js";
 import { drawLifespan } from "./charts.js";
 
 let _games = [];
@@ -6,7 +7,7 @@ let _activeIndex = 0;
 let _isOpen = false;
 let _hasNotif = false;
 
-const drag = { x: 0, y: 0, sx: 0, sy: 0, dragging: false };
+const drag = { x: null, y: null, sx: 0, sy: 0, dragging: false };
 
 export function initPokedex(games) {
   _games = games;
@@ -108,6 +109,11 @@ export function setActiveGame(i) {
 }
 
 export function setNotification(on) {
+  if (_isOpen && on) {
+    _hasNotif = false;
+    document.getElementById("pokedex-notif").classList.remove("show");
+    return;
+  }
   _hasNotif = on;
   document.getElementById("pokedex-notif").classList.toggle("show", on);
 }
@@ -122,9 +128,11 @@ function openPokedex() {
 
   const w = panel.offsetWidth;
   const h = panel.offsetHeight;
-  drag.x = (window.innerWidth - w) / 2;
-  drag.y = (window.innerHeight - h) / 2;
-  panel.style.transform = `translate(${drag.x}px, ${drag.y}px)`;
+  if (drag.x === null || drag.y === null) {
+    drag.x = (window.innerWidth - w) / 2;
+    drag.y = (window.innerHeight - h) / 2;
+  }
+  gsap.set(panel, { x: drag.x, y: drag.y });
   gsap.fromTo(panel,
     { scale: 0.2, opacity: 0 },
     { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.6)" }
@@ -155,7 +163,7 @@ function onPointerMove(e) {
   x = Math.max(8, Math.min(window.innerWidth - w - 8, x));
   y = Math.max(8, Math.min(window.innerHeight - h - 8, y));
   drag.x = x; drag.y = y;
-  panel.style.transform = `translate(${x}px, ${y}px)`;
+  gsap.set(panel, { x, y });
 }
 function onPointerUp(e) {
   drag.dragging = false;
@@ -165,14 +173,16 @@ function onPointerUp(e) {
 function renderContent() {
   const game = _games[_activeIndex] || _games[0];
   if (!game) return;
-  document.getElementById("pokedex-gen").textContent = game.generation;
+  document.getElementById("pokedex-gen").textContent = `Gen ${game.generation}`;
   document.getElementById("pokedex-sprite").src = game.pikachuSpriteUrl;
   document.getElementById("pokedex-game-title").textContent = game.version_group;
   document.getElementById("pokedex-console").textContent = game.console;
   document.getElementById("f-region").textContent = game.region;
   document.getElementById("f-date").textContent = new Date(game.release_date).toLocaleDateString("fr-FR");
   document.getElementById("f-new").textContent = `+${game.new_pokemon_count}`;
-  document.getElementById("f-total").textContent = String(game.new_pokemon_count);
+  document.getElementById("f-battle").textContent = `+${Number(game.battle_forms_count) || 0}`;
+  document.getElementById("f-regional").textContent = `+${Number(game.regional_forms_count) || 0}`;
+  document.getElementById("f-total").textContent = String(game.total_pokemon ?? game.new_pokemon_count);
   const mech = document.getElementById("mechanic-box");
   if (game.gameplay_mechanics) {
     mech.classList.remove("hidden");

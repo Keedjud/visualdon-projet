@@ -15,9 +15,6 @@
   <link rel="stylesheet" href="src/css/console.css" />
   <link rel="stylesheet" href="src/css/pokedex.css" />
 
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
   <script type="module" src="src/js/main.js"></script>
 </head>
 <body>
@@ -141,10 +138,12 @@
         <div class="field"><p class="field-label">Région</p><p id="f-region" class="field-value"></p></div>
         <div class="field"><p class="field-label">Date de sortie</p><p id="f-date" class="field-value"></p></div>
         <div class="field"><p class="field-label">Nouveaux Pokémon</p><p id="f-new" class="field-value accent"></p></div>
+        <div class="field"><p class="field-label">Nouvelles formes de combat</p><p id="f-battle" class="field-value accent"></p></div>
+        <div class="field"><p class="field-label">Nouvelles formes régionales</p><p id="f-regional" class="field-value accent"></p></div>
         <div class="field"><p class="field-label">Total Pokémon</p><p id="f-total" class="field-value accent"></p></div>
       </div>
       <div>
-        <p class="field-label">Durée de vie commerciale (mois)</p>
+        <p class="field-label">Durée de vie (heures)</p>
         <svg id="lifespan-svg"></svg>
       </div>
       <div id="mechanic-box" class="mechanic-box hidden">
