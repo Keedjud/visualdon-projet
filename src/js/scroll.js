@@ -30,7 +30,7 @@ export function initScroll(games) {
 }
 
 function handleScoreClick(game) {
-  const i = _games.indexOf(game);
+  const i = Number.isInteger(game?.index) ? game.index : _games.indexOf(game);
   if (i === -1) return;
   const section = document.getElementById(`game-section-${i}`);
   if (section) section.scrollIntoView({ behavior: "smooth", block: "center" });
