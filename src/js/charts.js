@@ -137,7 +137,7 @@ export function drawLifespan(games, activeIndex) {
   const cx = w / 2;
   const cy = h / 2;
   const outerR = Math.min(w, h) / 2 - 6;
-  const innerR = 24;
+  const innerR = 12;
   const maxValue = d3.max(data, d => d.completion) || 1;
 
   const radius = d3.scaleLinear()
@@ -155,6 +155,32 @@ export function drawLifespan(games, activeIndex) {
     .attr("class", "lifespan-radial")
     .attr("transform", `translate(${cx},${cy})`);
 
+  const scaleTicks = d3.ticks(0, maxValue, 3);
+  const scale = root.append("g")
+    .attr("class", "lifespan-scale");
+
+  scale.append("line")
+    .attr("class", "lifespan-scale-line")
+    .attr("x1", 0)
+    .attr("y1", -innerR)
+    .attr("x2", 0)
+    .attr("y2", -outerR);
+
+  const ticks = scale.selectAll("g.lifespan-scale-tick").data(scaleTicks).join("g")
+    .attr("class", "lifespan-scale-tick")
+    .attr("transform", d => `translate(0, ${-radius(d)})`);
+
+  ticks.append("line")
+    .attr("x1", -4)
+    .attr("x2", 4)
+    .attr("y1", 0)
+    .attr("y2", 0);
+
+  ticks.append("text")
+    .attr("x", 8)
+    .attr("y", 2)
+    .text(d => d);
+
   const arc = d3.arc();
   const arcPath = (d, r0, r1) => {
     const start = angle(d.index) ?? 0;
@@ -163,7 +189,8 @@ export function drawLifespan(games, activeIndex) {
   };
 
   const bars = root.selectAll("g.lifespan-bar").data(data).join("g")
-    .attr("class", "lifespan-bar");
+    .attr("class", "lifespan-bar")
+    .classed("is-current", d => d.index === activeIndex);
 
   bars.append("path")
     .attr("class", "lifespan-segment segment--main")
@@ -190,25 +217,32 @@ export function drawLifespan(games, activeIndex) {
     .style("opacity", 0)
     .style("pointer-events", "none");
 
+  const labelBg = label.append("rect")
+    .attr("class", "lifespan-label-bg")
+    .attr("rx", 6)
+    .attr("ry", 6);
+
   const labelText = label.append("text")
     .attr("class", "lifespan-label-text")
+    .attr("text-anchor", "middle")
     .attr("dy", "0.35em");
 
   bars.on("mouseenter", function (event, d) {
-    const start = angle(d.index) ?? 0;
-    const mid = start + angle.bandwidth() / 2;
-    const r = radius(d.completion) + 10;
-    const x = Math.cos(mid - Math.PI / 2) * r;
-    const y = Math.sin(mid - Math.PI / 2) * r;
-
     bars.classed("is-active", false);
     d3.select(this).classed("is-active", true);
 
-    label.attr("transform", `translate(${x},${y})`).style("opacity", 1);
-    labelText
-      .text(d.name)
-      .attr("text-anchor", x >= 0 ? "start" : "end")
-      .attr("dx", x >= 0 ? 6 : -6);
+    label.attr("transform", "translate(0,0)").style("opacity", 1);
+    labelText.text(d.name);
+
+    const textNode = labelText.node();
+    if (textNode) {
+      const box = textNode.getBBox();
+      labelBg
+        .attr("x", box.x - 6)
+        .attr("y", box.y - 4)
+        .attr("width", box.width + 12)
+        .attr("height", box.height + 8);
+    }
   });
 
   bars.on("mouseleave", function () {
