@@ -7,7 +7,7 @@ let _activeIndex = 0;
 let _isOpen = false;
 let _hasNotif = false;
 
-const drag = { x: 0, y: 0, sx: 0, sy: 0, dragging: false };
+const drag = { x: null, y: null, sx: 0, sy: 0, dragging: false };
 
 export function initPokedex(games) {
   _games = games;
@@ -128,9 +128,11 @@ function openPokedex() {
 
   const w = panel.offsetWidth;
   const h = panel.offsetHeight;
-  drag.x = (window.innerWidth - w) / 2;
-  drag.y = (window.innerHeight - h) / 2;
-  panel.style.transform = `translate(${drag.x}px, ${drag.y}px)`;
+  if (drag.x === null || drag.y === null) {
+    drag.x = (window.innerWidth - w) / 2;
+    drag.y = (window.innerHeight - h) / 2;
+  }
+  gsap.set(panel, { x: drag.x, y: drag.y });
   gsap.fromTo(panel,
     { scale: 0.2, opacity: 0 },
     { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.6)" }
@@ -161,7 +163,7 @@ function onPointerMove(e) {
   x = Math.max(8, Math.min(window.innerWidth - w - 8, x));
   y = Math.max(8, Math.min(window.innerHeight - h - 8, y));
   drag.x = x; drag.y = y;
-  panel.style.transform = `translate(${x}px, ${y}px)`;
+  gsap.set(panel, { x, y });
 }
 function onPointerUp(e) {
   drag.dragging = false;
