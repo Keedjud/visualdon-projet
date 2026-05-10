@@ -18,8 +18,16 @@
   margin-bottom: 1.5rem;
 }
 
-.hero-title { font-size: clamp(2rem, 6vw, 4.5rem); max-width: 56rem; }
+.hero-title { font-size: clamp(2rem, 6vw, 2.5rem); max-width: 66rem; }
 .hero-sub { margin-top: 2rem; max-width: 36rem; color: var(--muted); font-size: 1.05rem; }
+
+.hero-title-img {
+  height: clamp(15rem, 12vw, 400rem);
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
 .scroll-cue {
   margin-top: 3rem;
   font-family: var(--font-display);
@@ -123,12 +131,42 @@
 }
 @media (max-width: 1023px) { .chart-box--right { display: none; } }
 
+@keyframes highlight-bounce-top {
+  0%, 100% { transform: translateX(-50%) scale(1.02) translateY(0); }
+  50% { transform: translateX(-50%) scale(1.02) translateY(-3px); }
+}
+@keyframes highlight-bounce-right {
+  0%, 100% { transform: translateY(-50%) scale(1.03) translateX(0); }
+  50% { transform: translateY(-50%) scale(1.03) translateX(3px); }
+}
+@keyframes highlight-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
 .chart-box.highlight {
   border-color: var(--poke-yellow);
   box-shadow: 0 0 30px rgba(255, 200, 40, 0.4);
 }
-.chart-box--top.highlight { transform: translateX(-50%) scale(1.02); }
-.chart-box--right.highlight { transform: translateY(-50%) scale(1.03); }
+.chart-box--top.highlight { 
+  transform: translateX(-50%) scale(1.02);
+  animation: highlight-bounce-top .8s ease infinite;
+}
+.chart-box--right.highlight { 
+  transform: translateY(-50%) scale(1.03);
+  animation: highlight-bounce-right .8s ease infinite;
+}
+.game-banner.highlight {
+  border-color: var(--poke-yellow);
+  box-shadow: 0 0 30px rgba(255, 200, 40, 0.6);
+  animation: highlight-bounce-top .8s ease infinite;
+  transition: all .5s ease;
+}
+.pokedex-icon.highlight {
+  box-shadow: 0 0 30px rgba(255, 200, 40, 0.6);
+  animation: highlight-bounce .8s ease infinite;
+  transition: all .5s ease;
+}
 
 .chart-label {
   font-family: var(--font-display);
@@ -221,41 +259,41 @@
 /* Professor overlay (tutorials, fixed) */
 .prof-overlay {
   position: fixed;
-  bottom: 2rem;
+  top: 53%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   z-index: 40;
   pointer-events: none;
   opacity: 0;
   transition: opacity .7s ease;
-  display: flex; align-items: flex-end; gap: 1rem;
-  max-width: 42rem;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 0;
+  max-width: 100rem;
   padding: 0 1rem;
+  transition: opacity .7s ease;
 }
-.prof-overlay.show { opacity: 1; }
-.prof-img {
-  width: clamp(96px, 12vw, 144px);
-  height: auto;
-  filter: drop-shadow(0 0 30px rgba(255, 200, 40, 0.4));
-  flex-shrink: 0;
-}
+
 .prof-bubble {
-  position: relative;
-  background: var(--poke-yellow);
-  color: var(--bg);
-  border-radius: 1rem;
-  padding: 1rem 1.25rem;
-  font-size: .9rem;
-  font-weight: 500;
-  box-shadow: 0 10px 30px rgba(0,0,0,.4);
-  max-width: 28rem;
-}
-.prof-bubble::before {
-  content: "";
   position: absolute;
-  left: -8px;
-  bottom: 24px;
-  width: 16px; height: 16px;
-  background: var(--poke-yellow);
-  transform: rotate(45deg);
+  top: 72%;
+  left: 25%;
+  transform: none;
+  z-index: 1;
+  color: black;
+  font-size: 12px;
+  text-align: left;
+  max-width: 300px;
+}
+
+.prof-overlay.show {
+   opacity: 1; 
+   transition: opacity .7s ease .7s;
+}
+
+.prof-img {
+  width: clamp(150px, 40vw, 600px);
+  height: auto;
+  flex-shrink: 0;
 }

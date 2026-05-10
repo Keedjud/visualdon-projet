@@ -34,19 +34,29 @@ export function initPokedex(games) {
 function setupIntroAnimation() {
   const intro = document.getElementById("pokedex-intro");
   const hero = document.getElementById("pokedex-hero");
+  const congrats = document.querySelector(".intro-congrats");
+  const title = document.querySelector(".intro-title");
+  const text = document.querySelector(".intro-text");
   if (!intro || !hero) return;
+
+  gsap.set([congrats, title, text, hero], { opacity: 0, y: 20 });
 
   // Pop in at center
   ScrollTrigger.create({
     trigger: intro,
-    start: "top 80%",
+    start: "top 60%",
     once: true,
     onEnter: () => {
-      gsap.fromTo(
-        hero,
-        { scale: 0, rotate: -180, opacity: 0 },
-        { scale: 1, rotate: 0, opacity: 1, duration: 0.9, ease: "back.out(2)" }
-      );
+      gsap.set([congrats, title, text], { opacity: 0, y: 20 });
+
+      gsap.timeline()
+        .fromTo(hero,
+          { scale: 0, rotate: -180, opacity: 0 },
+          { scale: 1, rotate: 0, opacity: 1, duration: 0.9, ease: "back.out(2)" }
+        )
+        .to(congrats, { opacity: 1, y: 0, duration: 0.1, ease: "power2.out" }, "-=0.3")
+        .to(title,    { opacity: 1, y: 0, duration: 0.1, ease: "power2.out" }, "-=0.2")
+        .to(text,     { opacity: 1, y: 0, duration: 0.1, ease: "power2.out" }, "-=0.2");
     },
   });
 

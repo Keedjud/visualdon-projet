@@ -1,14 +1,14 @@
-// ScrollTrigger orchestration: builds game sections + tutorial triggers.
-import { ScrollTrigger } from "./gsap.js";
+import { gsap, ScrollTrigger } from "./gsap.js";
 import { drawSales, drawScores, highlightChart } from "./charts.js";
-import { updateConsole } from "./transitions.js";
+import { updateConsole, setConsoleScale } from "./transitions.js";
 import { setActiveGame, setNotification } from "./pokedex.js";
 
 const TUTORIALS = [
   { id: "sales", text: "Regarde en HAUT de l'écran : ce graphique montre les ventes cumulées de chaque jeu, en millions d'unités. Plus la courbe monte, plus la licence cartonne." },
-  { id: "scores", text: "À DROITE, tu verras un duel : à gauche le Metascore (la critique professionnelle), à droite le Userscore (les joueurs). Quand les deux barres divergent... ça raconte une histoire." },
+  { id: "scores", text: "À DROITE, tu verras un duel : à gauche le Metascore (la critique professionnelle), à droite le Userscore (les critiques des joueurs). Si les deux barres divergent, ça promets d'être intéressant." },
+  { id: "name", text: "EN BAS, tu trouveras le nom de chaque jeu et sa génération." },
   { id: "console", text: "AU CENTRE, il s'agit de la console sur laquelle le jeu est sorti. De plus, elle montrera des pikachus qui représentera le nombre de pokémons total sortis." },
-  { id: "pokedex", text: "N'oublie pas que tu peux ouvrir la Pokédex, qui te donnera plus d'infos croustillantes sur chaque jeu !" },
+  { id: "pokedex", text: "N'OUBLIE PAS que tu peux ouvrir le Pokédex qui se trouve en bas à droite de l'écran, qui te donnera plus d'infos croustillantes sur chaque jeu !" },
 ];
 
 let _games = [];
@@ -22,7 +22,6 @@ export function initScroll(games) {
   setupTutorialTriggers();
   setupGameTriggers();
 
-  // Initial paint
   drawSales(_games, 0);
   drawScores(_games, 0, handleScoreClick);
   updateConsole(_games[0], _games, 0, 0, true);
@@ -61,6 +60,7 @@ function setupTutorialTriggers() {
   const overlay = document.getElementById("prof-overlay");
   const bubble = document.getElementById("prof-bubble");
   const sections = document.querySelectorAll(".tuto-section");
+  let _activeTutoCount = 0; // ← en dehors du forEach
 
   sections.forEach(sec => {
     const id = sec.dataset.tuto;
@@ -76,13 +76,30 @@ function setupTutorialTriggers() {
     });
 
     function activate() {
-      bubble.textContent = tuto.text;
+      bubble.textContent = "";
       overlay.classList.add("show");
       highlightChart(id);
+
+      _activeTutoCount++;
+      if (_activeTutoCount === 1) setConsoleScale(3);
+
+      const text = tuto.text;
+      let i = 0;
+      const interval = setInterval(() => {
+        bubble.textContent += text[i];
+        i++;
+        if (i >= text.length) clearInterval(interval);
+      }, 30);
+      sec._typingInterval = interval;
     }
+
     function deactivate() {
+      clearInterval(sec._typingInterval);
       overlay.classList.remove("show");
       highlightChart(null);
+
+      _activeTutoCount = Math.max(0, _activeTutoCount - 1);
+      if (_activeTutoCount === 0) setConsoleScale(1);
     }
   });
 }
@@ -129,3 +146,5 @@ function setActive(i, direction = "forward") {
 function escapeHtml(s) {
   return String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 }
+
+
