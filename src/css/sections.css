@@ -226,6 +226,12 @@
   transition: stroke 0.2s ease, filter 0.2s ease;
 }
 
+#scores-svg .row.is-current .scores-bar {
+  stroke: rgba(255, 255, 255, 0.6);
+  stroke-width: 1;
+  filter: drop-shadow(0 0 3px rgba(255, 200, 40, 0.2));
+}
+
 #scores-svg .row.is-active .scores-bar {
   stroke: rgba(255, 255, 255, 0.75);
   stroke-width: 1.5;

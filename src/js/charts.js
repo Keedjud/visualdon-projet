@@ -109,6 +109,7 @@ export function drawScores(games, activeIndex, onGameClick) {
 
   const rows = svg.selectAll("g.row").data(data).join("g")
     .attr("class", "row")
+    .classed("is-current", d => d.index === activeIndex)
     .attr("transform", (_, i) => `translate(0, ${m.t + i * rowH + rowH / 2})`);
 
   const label = svg.append("g")
