@@ -259,7 +259,7 @@
 /* Professor overlay (tutorials, fixed) */
 .prof-overlay {
   position: fixed;
-  top: 53%;
+  top: 52%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 40;
@@ -282,18 +282,18 @@
   transform: none;
   z-index: 1;
   color: black;
-  font-size: 12px;
+  font-size: 14px;
   text-align: left;
-  max-width: 300px;
+  max-width: 370px;
 }
 
 .prof-overlay.show {
    opacity: 1; 
-   transition: opacity .7s ease .7s;
+   transition: opacity .7s ease .15s;
 }
 
 .prof-img {
-  width: clamp(150px, 40vw, 600px);
+  width: clamp(150px, 45vw, 800px);
   height: auto;
   flex-shrink: 0;
 }
