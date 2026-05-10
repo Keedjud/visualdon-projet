@@ -24,8 +24,6 @@ export function initScroll(games) {
 
   drawSales(_games, 0);
   drawScores(_games, 0, handleScoreClick);
-  updateConsole(_games[0], _games, 0, 0, true);
-  _showChen = true;
 }
 
 function handleScoreClick(game) {
@@ -60,47 +58,68 @@ function setupTutorialTriggers() {
   const overlay = document.getElementById("prof-overlay");
   const bubble = document.getElementById("prof-bubble");
   const sections = document.querySelectorAll(".tuto-section");
-  let _activeTutoCount = 0; // ← en dehors du forEach
+  let _currentTypingInterval = null;
 
-  sections.forEach(sec => {
+ sections.forEach(sec => {
     const id = sec.dataset.tuto;
     const tuto = TUTORIALS.find(t => t.id === id);
+
+    // Trigger 1 : agrandit la console
     ScrollTrigger.create({
       trigger: sec,
       start: "top center",
       end: "bottom center",
-      onEnter: () => activate(),
-      onEnterBack: () => activate(),
-      onLeave: () => deactivate(),
-      onLeaveBack: () => deactivate(),
+      onEnter: () => setConsoleScale(3),
+      onEnterBack: () => setConsoleScale(3),
+      onLeave: () => setConsoleScale(1),
+      onLeaveBack: () => setConsoleScale(1),
     });
 
-    function activate() {
-      bubble.textContent = "";
-      overlay.classList.add("show");
-      highlightChart(id);
+    // Trigger 2 : professor apparaît
+    ScrollTrigger.create({
+      trigger: sec,
+      start: "center center",
+      onEnter: () => {
+        // Arrête tout interval en cours
+        clearInterval(_currentTypingInterval);
+        
+        overlay.classList.add("show");
+        bubble.textContent = "";
+        highlightChart(id);
+        
+        const words = tuto.text.split(" ");
+        let i = 0;
+        _currentTypingInterval = setInterval(() => {
+          bubble.textContent = words.slice(0, i + 1).join(" ");
+          i++;
+          if (i >= words.length) clearInterval(_currentTypingInterval);
+        }, 120);
+      },
+      onEnterBack: () => {
+        clearInterval(_currentTypingInterval); // ← arrête aussi au désscroll
+        overlay.classList.add("show");
+        bubble.textContent = tuto.text;
+        highlightChart(id);
+      },
+      onLeaveBack: () => {
+        clearInterval(_currentTypingInterval);
+        overlay.classList.remove("show");
+        bubble.textContent = "";
+        highlightChart(null);
+      },
+    });
+});
 
-      _activeTutoCount++;
-      if (_activeTutoCount === 1) setConsoleScale(3);
-
-      const text = tuto.text;
-      let i = 0;
-      const interval = setInterval(() => {
-        bubble.textContent += text[i];
-        i++;
-        if (i >= text.length) clearInterval(interval);
-      }, 30);
-      sec._typingInterval = interval;
-    }
-
-    function deactivate() {
-      clearInterval(sec._typingInterval);
+  // ← en dehors du forEach
+  ScrollTrigger.create({
+    trigger: "#tutorials",
+    start: "bottom center",
+    onEnter: () => {
       overlay.classList.remove("show");
+      bubble.textContent = "";
       highlightChart(null);
-
-      _activeTutoCount = Math.max(0, _activeTutoCount - 1);
-      if (_activeTutoCount === 0) setConsoleScale(1);
-    }
+      setConsoleScale(1);
+    },
   });
 }
 
@@ -122,13 +141,13 @@ function setupGameTriggers() {
     });
     ScrollTrigger.create({
       trigger: `#game-section-${i}`,
-      start: "top bottom",
-      end: "bottom top",
+      start: "top center", 
+      end: "bottom center", 
       scrub: true,
       onUpdate: (self) => {
         _sectionProgress = self.progress;
         const game = _games[_activeIndex];
-        updateConsole(game, _games, _activeIndex, _sectionProgress, _showChen && _activeIndex === 0 && _sectionProgress < 0.25);
+        updateConsole(game, _games, _activeIndex, _sectionProgress, false);
       },
     });
   });
@@ -140,7 +159,7 @@ function setActive(i, direction = "forward") {
   setActiveGame(i);
   drawSales(_games, i, direction);
   drawScores(_games, i, handleScoreClick);
-  updateConsole(_games[i], _games, i, _sectionProgress, false);
+  updateConsole(_games[i], _games, i, 0, false);
 }
 
 function escapeHtml(s) {

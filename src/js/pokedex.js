@@ -52,7 +52,7 @@ function setupIntroAnimation() {
       gsap.timeline()
         .fromTo(hero,
           { scale: 0, rotate: -180, opacity: 0 },
-          { scale: 1, rotate: 0, opacity: 1, duration: 0.9, ease: "back.out(2)" }
+          { scale: 1, rotate: 0, opacity: 1, duration: 0.9, ease: "back.out(2)" },
         )
         .to(congrats, { opacity: 1, y: 0, duration: 0.1, ease: "power2.out" }, "-=0.3")
         .to(title,    { opacity: 1, y: 0, duration: 0.1, ease: "power2.out" }, "-=0.2")
