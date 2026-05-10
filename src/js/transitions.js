@@ -279,3 +279,11 @@ function animatePikachu(img, w, h, spriteSize) {
 
   gsap.delayedCall(Math.random() * 2, moveToNew);
 }
+
+export function setConsoleScale(scale) {
+  const img = document.getElementById("console-img");
+  gsap.to(img, { 
+    scale, 
+    y: scale > 1 ? 250 : 0,
+  });
+}

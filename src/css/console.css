@@ -17,8 +17,7 @@
   width: min(650px, 90vw);
   height: auto;
   display: block;
-  /* filter: drop-shadow(0 20px 40px rgba(0,0,0,.5));
-  transition: filter .3s ease; */
+  transition: transform 0.5s ease;
 }
 .console-img.pixelating {
   image-rendering: pixelated;
@@ -58,33 +57,6 @@
 @keyframes wobbleTop {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-3px); }
-}
-
-.chen-bubble {
-  display: flex;
-  align-items: center;
-  gap: .75rem;
-  max-width: 100%;
-}
-.chen-img { width: clamp(60px, 8vw, 96px); height: auto; }
-.chen-text {
-  position: relative;
-  background: var(--poke-yellow);
-  color: var(--bg);
-  border-radius: .75rem;
-  padding: .5rem .75rem;
-  font-size: .75rem;
-  font-weight: 500;
-  max-width: 180px;
-  box-shadow: 0 4px 12px rgba(0,0,0,.4);
-}
-.chen-text::before {
-  content: "";
-  position: absolute;
-  left: -8px; top: 16px;
-  width: 12px; height: 12px;
-  background: var(--poke-yellow);
-  transform: rotate(45deg);
 }
 
 .game-banner {

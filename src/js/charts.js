@@ -337,6 +337,10 @@ export function drawLifespan(games, activeIndex) {
 export function highlightChart(which) {
   const sales = document.getElementById("sales-chart");
   const scores = document.getElementById("scores-chart");
+  const name = document.getElementById("game-banner");
+  const pokedex = document.getElementById("pokedex-icon");
   sales.classList.toggle("highlight", which === "sales");
   scores.classList.toggle("highlight", which === "scores");
+  name.classList.toggle("highlight", which === "name");
+  pokedex.classList.toggle("highlight", which === "pokedex");
 }
