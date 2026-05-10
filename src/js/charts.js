@@ -3,19 +3,21 @@ import * as d3 from "d3";
 
 let _prevSalesLength = 0;
 
-export function drawSales(games, activeIndex, direction = "forward") {
+export function drawSales(games, activeIndex, direction = "forward", onGameClick) {
   const node = document.getElementById("sales-svg");
   if (!node) return;
   const svg = d3.select(node);
   svg.selectAll("*").remove();
 
   const data = games.slice(0, activeIndex + 1)
-    .filter(g => g.sales > 0)
-    .map(g => ({
+    .map((g, index) => ({
+      index,
       year: new Date(g.release_date).getFullYear(),
       v: g.sales,
       name: g.version_group,
-    }));
+      generation: g.generation,
+    }))
+    .filter(d => d.v > 0);
 
   const w = 720, h = 100, m = { t: 8, r: 12, b: 22, l: 32 };
   svg.attr("viewBox", `0 0 ${w} ${h}`);
@@ -67,7 +69,24 @@ export function drawSales(games, activeIndex, direction = "forward") {
     _prevSalesLength = totalLength;
   }
 
-  svg.selectAll("circle").data(data).join("circle")
+  const label = svg.append("g")
+    .attr("class", "sales-label")
+    .style("opacity", 0)
+    .style("pointer-events", "none");
+
+  const labelBg = label.append("rect")
+    .attr("class", "sales-label-bg")
+    .attr("rx", 6)
+    .attr("ry", 6);
+
+  const labelText = label.append("text")
+    .attr("class", "sales-label-text")
+    .attr("text-anchor", "middle")
+    .attr("dy", "0.35em");
+
+  const points = svg.selectAll("circle.sales-point").data(data).join("circle")
+    .attr("class", "sales-point")
+    .classed("is-current", d => d.index === activeIndex)
     .attr("cx", d => x(d.year)).attr("cy", d => y(d.v))
     .attr("r", d => d.v > 0 ? 4 : 0).attr("fill", "#ffc828").attr("stroke", "#ff5057").attr("stroke-width", 2);
 
@@ -77,6 +96,49 @@ export function drawSales(games, activeIndex, direction = "forward") {
     .attr("text-anchor", "middle").attr("fill", "#ffc828")
     .style("font-size", "9px").style("font-weight", 600)
     .text(d => d.v > 0 ? `${d.v.toFixed(1)}M` : "");
+
+  const showLabel = d => {
+    points.classed("is-active", p => p === d);
+    labelText.text(`Gen ${d.generation} - ${d.name}`);
+    label.raise();
+    label.style("opacity", 1);
+
+    const textNode = labelText.node();
+    if (textNode) {
+      const box = textNode.getBBox();
+      labelBg
+        .attr("x", box.x - 6)
+        .attr("y", box.y - 4)
+        .attr("width", box.width + 12)
+        .attr("height", box.height + 8);
+
+      const targetX = x(d.year);
+      const targetY = y(d.v) - 14;
+      const minX = m.l + (box.width / 2) + 6;
+      const maxX = w - m.r - (box.width / 2) - 6;
+      const minY = m.t + (box.height / 2) + 4;
+      const labelX = Math.max(minX, Math.min(maxX, targetX));
+      const labelY = Math.max(minY, targetY);
+
+      label.attr("transform", `translate(${labelX}, ${labelY})`);
+    }
+  };
+
+  const hideLabel = () => {
+    points.classed("is-active", false);
+    label.style("opacity", 0);
+  };
+
+  svg.selectAll("circle.sales-hit").data(data).join("circle")
+    .attr("class", "sales-hit")
+    .attr("cx", d => x(d.year))
+    .attr("cy", d => y(d.v))
+    .attr("r", 10)
+    .attr("fill", "transparent")
+    .style("cursor", "pointer")
+    .on("mouseenter", (_, d) => showLabel(d))
+    .on("mouseleave", hideLabel)
+    .on("click", (_, d) => onGameClick && onGameClick(d));
 }
 
 export function drawScores(games, activeIndex, onGameClick) {

@@ -179,6 +179,37 @@
 
 #sales-svg, #scores-svg, #lifespan-svg { width: 100%; color: var(--muted);}
 
+#sales-svg .sales-point {
+  transition: stroke 0.2s ease, filter 0.2s ease;
+}
+
+#sales-svg .sales-point.is-current {
+  stroke: rgba(255, 255, 255, 0.6);
+  stroke-width: 2.5;
+  filter: drop-shadow(0 0 3px rgba(255, 200, 40, 0.25));
+}
+
+#sales-svg .sales-point.is-active {
+  stroke: rgba(255, 255, 255, 0.85);
+  stroke-width: 3;
+  filter: drop-shadow(0 0 5px rgba(255, 200, 40, 0.45));
+}
+
+#sales-svg .sales-label-text {
+  font-size: 9px;
+  font-weight: 600;
+  fill: var(--fg);
+  paint-order: stroke;
+  stroke: rgba(0, 0, 0, 0.6);
+  stroke-width: 2;
+}
+
+#sales-svg .sales-label-bg {
+  fill: rgba(38, 28, 56, 0.9);
+  stroke: var(--border);
+  stroke-width: 1;
+}
+
 #lifespan-svg .lifespan-segment {
   transition: stroke .2s ease, filter .2s ease;
 }

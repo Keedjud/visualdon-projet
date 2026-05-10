@@ -22,7 +22,7 @@ export function initScroll(games) {
   setupTutorialTriggers();
   setupGameTriggers();
 
-  drawSales(_games, 0);
+  drawSales(_games, 0, "forward", handleScoreClick);
   drawScores(_games, 0, handleScoreClick);
 }
 
@@ -157,7 +157,7 @@ function setActive(i, direction = "forward") {
   if (_activeIndex === i) return;
   _activeIndex = i;
   setActiveGame(i);
-  drawSales(_games, i, direction);
+  drawSales(_games, i, direction, handleScoreClick);
   drawScores(_games, i, handleScoreClick);
   updateConsole(_games[i], _games, i, 0, false);
 }
