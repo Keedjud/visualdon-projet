@@ -23,8 +23,8 @@
     "console": "Switch",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/scarlet-violet/normal/pikachu.png",
       "anecdotes": [
-        { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
-        { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
+        { "side": "left", "title": "DLC moderne", "text": "Le DLC continue la stratégie moderne de Pokémon de remplacer les versions améliorées par du contenu additionnel." },
+        { "side": "right", "title": "Référence à AZ", "text": "Le nom Z-A fait référence à AZ, le roi immortel de Kalos dans Pokémon X/Y." }
       ]
   },
     {
@@ -50,8 +50,8 @@
     "console": "Switch",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/scarlet-violet/normal/pikachu.png",
       "anecdotes": [
-        { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
-        { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
+        { "side": "left", "title": "Retour des Méga-Évolutions", "text": "Le jeu marque le retour des Méga-Évolutions après plusieurs années d'absence." },
+        { "side": "right", "title": "Illumis unique", "text": "L'intégralité du jeu se déroule dans Illumis, une première pour un Pokémon centré sur une seule ville." }
       ]
   },
     {
@@ -77,8 +77,8 @@
     "console": "Switch",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/scarlet-violet/normal/pikachu.png",
       "anecdotes": [
-        { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
-        { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
+        { "side": "left", "title": "Ogerpon", "text": "Ogerpon change de type selon le masque porté." },
+        { "side": "right", "title": "Terapagos", "text": "Terapagos représente littéralement l'origine du phénomène Téracristal." }
       ]
   },
     {
@@ -104,8 +104,8 @@
     "console": "Switch",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/scarlet-violet/normal/pikachu.png",
       "anecdotes": [
-        { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
-        { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
+        { "side": "left", "title": "Monde ouvert", "text": "Premier monde totalement ouvert de la série principale." },
+        { "side": "right", "title": "Lancement chaotique", "text": "Le lancement a été marqué par énormément de bugs et problèmes de performance devenus viraux." }
       ]
   },
     {
@@ -131,8 +131,8 @@
     "console": "Switch",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/sword-shield/normal/pikachu.png",
       "anecdotes": [
-        { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
-        { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
+        { "side": "left", "title": "Attaques directes", "text": "Le jeu introduit enfin des Pokémon pouvant attaquer directement le joueur." },
+        { "side": "right", "title": "Inspiration BOTW", "text": "Les développeurs se sont inspirés de Zelda BOTW pour l'exploration." }
       ]
   },
     {
@@ -158,8 +158,8 @@
     "console": "Switch",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/sword-shield/normal/pikachu.png",
       "anecdotes": [
-        { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
-        { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
+        { "side": "left", "title": "Développé par ILCA", "text": "Les remakes ont été développés par ILCA et non Game Freak." },
+        { "side": "right", "title": "Style chibi", "text": "Le style 'chibi' a énormément divisé les fans avant la sortie." }
       ]
   },
     {
@@ -185,8 +185,8 @@
     "console": "Switch",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/sword-shield/normal/pikachu.png",
       "anecdotes": [
-        { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
-        { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
+        { "side": "left", "title": "Premier DLC majeur", "text": "C'est le premier DLC payant principal de la série au lieu d'une version complémentaire." },
+        { "side": "right", "title": "Aventures Dynamax", "text": "Les aventures Dynamax permettent de capturer des légendaires d'anciennes générations." }
       ]
   },
     {
@@ -212,8 +212,8 @@
     "console": "Switch",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/sword-shield/normal/pikachu.png",
       "anecdotes": [
-        { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
-        { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
+        { "side": "left", "title": "Dexit", "text": "Le Dexit a provoqué une énorme polémique : tous les Pokémon n'étaient plus disponibles." },
+        { "side": "right", "title": "Dynamax", "text": "Le Dynamax a été inspiré des combats de kaijus japonais type Godzilla." }
       ]
   },
     {
@@ -239,8 +239,8 @@
     "console": "Switch",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/sun-moon/normal/pikachu-f.png",
       "anecdotes": [
-        { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
-        { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
+        { "side": "left", "title": "Capture façon GO", "text": "Les captures sont inspirées directement de Pokémon GO." },
+        { "side": "right", "title": "Attaques exclusives", "text": "Évoli et Pikachu partenaires ont des attaques exclusives totalement cassées." }
       ]
   },
     {
@@ -266,8 +266,8 @@
     "console": "Nintendo_3DS",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/sun-moon/normal/pikachu-f.png",
       "anecdotes": [
-        { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
-        { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
+        { "side": "left", "title": "Ultra-Nécrozma", "text": "Ultra-Nécrozma est considéré comme l'un des boss les plus difficiles de la série." },
+        { "side": "right", "title": "Ultra-Brèches", "text": "Les Ultra-Brèches permettent de traverser des dimensions alternatives." }
       ]
   },
     {
@@ -293,8 +293,8 @@
     "console": "Nintendo_3DS",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/sun-moon/normal/pikachu-f.png",
       "anecdotes": [
-        { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
-        { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
+        { "side": "left", "title": "Épreuves d'Alola", "text": "Les arènes sont remplacées par les Épreuves d'Alola." },
+        { "side": "right", "title": "Meme Noadkoko", "text": "Noadkoko d'Alola est devenu un meme mondial à cause de son cou absurde." }
       ]
   },
     {
@@ -320,8 +320,8 @@
     "console": "Nintendo_3DS",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/x-y/normal/pikachu-f.png",
       "anecdotes": [
-        { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
-        { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
+        { "side": "left", "title": "Épisode Delta", "text": "Le scénario de l'épisode Delta tease directement le multivers Pokémon." },
+        { "side": "right", "title": "Méga-Rayquaza", "text": "Méga-Rayquaza est tellement puissant qu'il a été interdit en compétition officielle." }
       ]
   },
     {
@@ -347,8 +347,8 @@
     "console": "Nintendo_3DS",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/x-y/normal/pikachu-f.png",
       "anecdotes": [
-        { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
-        { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
+        { "side": "left", "title": "3D intégrale", "text": "Première génération entièrement en 3D." },
+        { "side": "right", "title": "Prismillon", "text": "Prismillon possède des motifs différents selon la région réelle du joueur dans le monde." }
       ]
   },
     {
@@ -374,8 +374,8 @@
     "console": "Nintendo_DS",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/black-white/normal/pikachu-f.png",
       "anecdotes": [
-        { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
-        { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
+        { "side": "left", "title": "Vrais sequels", "text": "Ce sont les premiers vrais sequels de la licence, et non une version améliorée." },
+        { "side": "right", "title": "Pokéwood", "text": "Le Pokéwood est inspiré des vieux films hollywoodiens kitsch." }
       ]
   },
     {
@@ -401,8 +401,8 @@
     "console": "Nintendo_DS",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/black-white/normal/pikachu-f.png",
       "anecdotes": [
-        { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
-        { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
+        { "side": "left", "title": "Pokédex inédit", "text": "Jusqu'à la Ligue Pokémon, aucun ancien Pokémon n'apparaît : décision ultra controversée." },
+        { "side": "right", "title": "Victini #000", "text": "Victini possède le numéro #000 dans le Pokédex Unys interne." }
       ]
   },
     {
@@ -428,8 +428,8 @@
     "console": "Nintendo_DS",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/diamond-pearl/normal/pikachu-f.png",
       "anecdotes": [
-        { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
-        { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
+        { "side": "left", "title": "Pokémon suiveurs", "text": "Tous les Pokémon peuvent suivre le joueur, une feature adorée des fans." },
+        { "side": "right", "title": "Pokéwalker", "text": "Le Pokéwalker utilisait un podomètre réel pour entraîner ses Pokémon en marchant." }
       ]
   },
     {
@@ -455,8 +455,8 @@
     "console": "Nintendo_DS",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/diamond-pearl/normal/pikachu-f.png",
       "anecdotes": [
-        { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
-        { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
+        { "side": "left", "title": "Monde Distorsion", "text": "Le Monde Distorsion a été inspiré par les œuvres surréalistes de M.C. Escher." },
+        { "side": "right", "title": "Antimatière", "text": "Giratina a été conçu pour représenter l'antimatière face à Dialga (temps) et Palkia (espace)." }
       ]
   },
     {
@@ -482,8 +482,8 @@
     "console": "Nintendo_DS",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/diamond-pearl/normal/pikachu-f.png",
       "anecdotes": [
-        { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
-        { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
+        { "side": "left", "title": "Sauvegardes lentes", "text": "Les sauvegardes étaient extrêmement lentes à cause du moteur du jeu." },
+        { "side": "right", "title": "Wi-Fi mondial", "text": "C'est la première génération avec connexion Wi-Fi mondiale." }
       ]
   },
     {
@@ -509,8 +509,8 @@
     "console": "Game_boy_advance",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/ruby-sapphire/normal/pikachu.png",
       "anecdotes": [
-        { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
-        { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
+        { "side": "left", "title": "Zone de Combat", "text": "La Zone de Combat est devenue culte pour sa difficulté extrême." },
+        { "side": "right", "title": "Champion final", "text": "Le champion final n'est plus Pierre Rochard mais Wallace, un changement très inhabituel pour une version définitive." }
       ]
   },
     {
@@ -536,8 +536,8 @@
     "console": "Game_boy_advance",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/ruby-sapphire/normal/pikachu.png",
       "anecdotes": [
-        { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
-        { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
+        { "side": "left", "title": "Interface simplifiée", "text": "Les développeurs ont volontairement simplifié l'interface pour attirer les nouveaux joueurs." },
+        { "side": "right", "title": "Îles Sévii", "text": "Les îles Sévii ont été créées spécialement pour ajouter du contenu inédit aux remakes." }
       ]
   },
     {
@@ -563,8 +563,8 @@
     "console": "Game_boy_advance",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/ruby-sapphire/normal/pikachu.png",
       "anecdotes": [
-        { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
-        { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
+        { "side": "left", "title": "Transferts coupés", "text": "Beaucoup de fans ont été choqués car on ne pouvait plus transférer les anciens Pokémon des jeux Game Boy." },
+        { "side": "right", "title": "Terre et mer", "text": "Le thème central du jeu oppose la terre et la mer, inspiré des catastrophes naturelles japonaises." }
       ]
   },
     {
@@ -590,8 +590,8 @@
     "console": "Game_boy_color",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/silver/normal/pikachu.png",
       "anecdotes": [
-        { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
-        { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
+        { "side": "left", "title": "Héroïne jouable", "text": "Premier jeu Pokémon où l'on peut jouer un personnage féminin." },
+        { "side": "right", "title": "Sprites animés", "text": "Les sprites Pokémon sont animés pour la première fois." }
       ]
   },
     {
@@ -617,8 +617,8 @@
     "console": "Game_boy_color",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/silver/normal/pikachu.png",
       "anecdotes": [
-        { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
-        { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
+        { "side": "left", "title": "Compression d'Iwata", "text": "Satoru Iwata a compressé le code du jeu, ce qui a permis d'ajouter toute la région de Kanto en post-game." },
+        { "side": "right", "title": "Horloge interne", "text": "Les jeux avaient une horloge interne réelle : révolutionnaire sur Game Boy à l'époque." }
       ]
   },
     {
@@ -644,8 +644,8 @@
     "console": "Game_boy",
     "pikachuSpriteUrl": "https://img.pokemondb.net/sprites/red-blue/normal/pikachu.png",
       "anecdotes": [
-        { "side": "left", "title": "Un succès improbable", "text": "Game Freak frôlait la faillite. Satoshi Tajiri travaillait sur Pokémon depuis 6 ans avant sa sortie." },
-        { "side": "right", "title": "151 ou 150 ?", "text": "Mew n'était pas censé exister : ajouté en cachette par un développeur dans l'espace mémoire restant." }
+        { "side": "left", "title": "Effet anime", "text": "Le jeu a été créé pour profiter du succès massif de l'anime avec Pikachu." },
+        { "side": "right", "title": "Pikachu affectif", "text": "Pikachu refuse parfois de suivre le joueur s'il n'aime pas certaines actions : une des premières formes d'affection Pokémon." }
       ]
   },
     {

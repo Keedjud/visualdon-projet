@@ -94,7 +94,6 @@
 }
 .anecdote--left { align-self: flex-start; margin-left: clamp(1rem, 5vw, 3rem); border-color: var(--poke-blue); }
 .anecdote--right { align-self: flex-end; margin-right: clamp(1rem, 5vw, 3rem); border-color: var(--poke-yellow); }
-.anecdote .gen-label { font-family: var(--font-display); font-size: 10px; text-transform: uppercase; color: var(--muted); margin-bottom: .5rem; }
 .anecdote h3 { font-size: 1rem; margin-bottom: .5rem; color: var(--poke-yellow); font-family: var(--font-display); }
 .anecdote p { font-size: .9rem; color: rgba(245, 241, 235, 0.9); }
 
