@@ -13,17 +13,19 @@ const TUTORIALS = [
 
 let _games = [];
 let _activeIndex = 0;
+let _maxIndex = 0;
 let _sectionProgress = 0;
 let _showChen = false;
 
 export function initScroll(games) {
   _games = games;
+  _maxIndex = 0;
   buildGameSections();
   setupTutorialTriggers();
   setupGameTriggers();
 
-  drawSales(_games, 0, "forward", handleScoreClick);
-  drawScores(_games, 0, handleScoreClick);
+  drawSales(_games, 0, _maxIndex, "forward", handleScoreClick);
+  drawScores(_games, 0, _maxIndex, handleScoreClick);
 }
 
 function handleScoreClick(game) {
@@ -154,10 +156,12 @@ function setupGameTriggers() {
 
 function setActive(i, direction = "forward") {
   if (_activeIndex === i) return;
+  const isNew = i > _maxIndex;
+  if (isNew) _maxIndex = i;
   _activeIndex = i;
-  setActiveGame(i);
-  drawSales(_games, i, direction, handleScoreClick);
-  drawScores(_games, i, handleScoreClick);
+  setActiveGame(i, _maxIndex);
+  drawSales(_games, i, _maxIndex, isNew ? "forward" : "static", handleScoreClick);
+  drawScores(_games, i, _maxIndex, handleScoreClick);
   updateConsole(_games[i], _games, i, 0, false);
 }
 

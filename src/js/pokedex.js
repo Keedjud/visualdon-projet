@@ -4,6 +4,7 @@ import { drawLifespan } from "./charts.js";
 
 let _games = [];
 let _activeIndex = 0;
+let _maxIndex = 0;
 let _isOpen = false;
 let _hasNotif = false;
 
@@ -113,8 +114,9 @@ function setIconVisible(v) {
   document.getElementById("pokedex-icon").classList.toggle("visible", v);
 }
 
-export function setActiveGame(i) {
+export function setActiveGame(i, maxIndex) {
   _activeIndex = i;
+  _maxIndex = Math.max(_maxIndex, Number.isInteger(maxIndex) ? maxIndex : i);
   if (_isOpen) renderContent();
 }
 
@@ -200,5 +202,12 @@ function renderContent() {
   } else {
     mech.classList.add("hidden");
   }
-  drawLifespan(_games, _activeIndex);
+  drawLifespan(_games, _activeIndex, _maxIndex, handleLifespanClick);
+}
+
+function handleLifespanClick(game) {
+  const i = Number.isInteger(game?.index) ? game.index : _games.indexOf(game);
+  if (i === -1) return;
+  const section = document.getElementById(`game-section-${i}`);
+  if (section) section.scrollIntoView({ behavior: "smooth", block: "center" });
 }
