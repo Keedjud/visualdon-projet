@@ -3,13 +3,13 @@ import * as d3 from "d3";
 
 let _prevSalesLength = 0;
 
-export function drawSales(games, activeIndex, direction = "forward", onGameClick) {
+export function drawSales(games, activeIndex, revealedIndex, direction = "forward", onGameClick) {
   const node = document.getElementById("sales-svg");
   if (!node) return;
   const svg = d3.select(node);
   svg.selectAll("*").remove();
 
-  const data = games.slice(0, activeIndex + 1)
+  const data = games.slice(0, revealedIndex + 1)
     .map((g, index) => ({
       index,
       year: new Date(g.release_date).getFullYear(),
@@ -141,13 +141,13 @@ export function drawSales(games, activeIndex, direction = "forward", onGameClick
     .on("click", (_, d) => onGameClick && onGameClick(d));
 }
 
-export function drawScores(games, activeIndex, onGameClick) {
+export function drawScores(games, activeIndex, revealedIndex, onGameClick) {
   const node = document.getElementById("scores-svg");
   if (!node) return;
   const svg = d3.select(node);
   svg.selectAll("*").remove();
 
-  const data = games.slice(0, activeIndex + 1)
+  const data = games.slice(0, revealedIndex + 1)
     .map((game, index) => ({ ...game, index }));
   const w = 280
   const h = Math.max(80, 20 + data.length * 22);
@@ -257,13 +257,13 @@ export function drawScores(games, activeIndex, onGameClick) {
   });
 }
 
-export function drawLifespan(games, activeIndex) {
+export function drawLifespan(games, activeIndex, revealedIndex, onGameClick) {
   const node = document.getElementById("lifespan-svg");
   if (!node) return;
   const svg = d3.select(node);
   svg.selectAll("*").remove();
 
-  const data = games.slice(0, activeIndex + 1).map((g, i) => {
+  const data = games.slice(0, revealedIndex + 1).map((g, i) => {
     const main = Number(g.playtime?.main) || 0;
     const extra = Number(g.playtime?.extra) || 0;
     const completion = Number(g.playtime?.completion) || 0;
@@ -357,6 +357,9 @@ export function drawLifespan(games, activeIndex) {
     .attr("class", "lifespan-hit")
     .attr("fill", "transparent")
     .attr("d", d => arcPath(d, innerR, Math.max(radius(d.completion), innerR + 1)));
+  bars.selectAll(".lifespan-hit")
+    .style("cursor", onGameClick ? "pointer" : "default")
+    .on("click", (_, d) => onGameClick && onGameClick(d));
 
   const label = root.append("g")
     .attr("class", "lifespan-label")
