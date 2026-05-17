@@ -23,9 +23,32 @@ export function initScroll(games) {
   buildGameSections();
   setupTutorialTriggers();
   setupGameTriggers();
+  setupOutroMusic();
 
   drawSales(_games, 0, _maxIndex, "forward", handleScoreClick);
   drawScores(_games, 0, _maxIndex, handleScoreClick);
+}
+
+function setupOutroMusic() {
+  const audio = document.getElementById("outro-music");
+  
+  ScrollTrigger.create({
+    trigger: ".section--outro",
+    start: "top center",
+    onEnter: () => {
+      audio.volume = 0;
+      audio.play();
+      gsap.to(audio, { volume: 1, duration: 2, ease: "power2.out" });
+    },
+    onLeaveBack: () => {
+      gsap.to(audio, { 
+        volume: 0, 
+        duration: 1, 
+        ease: "power2.in",
+        onComplete: () => audio.pause()
+      });
+    },
+  });
 }
 
 function handleScoreClick(game) {
@@ -111,7 +134,6 @@ function setupTutorialTriggers() {
     });
 });
 
-  // ← en dehors du forEach
   ScrollTrigger.create({
     trigger: "#tutorials",
     start: "bottom center",
