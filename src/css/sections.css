@@ -318,9 +318,11 @@
   transform: none;
   z-index: 1;
   color: black;
-  font-size: 14px;
+  font-size: 10px;
   text-align: left;
-  max-width: 370px;
+  max-width: 420px;
+  font-family: var(--font-display);
+  line-height: 2;
 }
 
 .prof-overlay.show {

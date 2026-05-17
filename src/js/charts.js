@@ -30,9 +30,21 @@ export function drawSales(games, activeIndex, revealedIndex, direction = "forwar
   const y = d3.scaleLinear().domain([0, 35]).range([h - m.b, m.t]);
 
   svg.append("g").attr("transform", `translate(0,${h - m.b})`)
-    .call(d3.axisBottom(x).tickFormat(d3.format("d")).ticks(data.length))
+    .call(d3.axisBottom(x)
+      .tickValues(data.map(d => d.year))
+      .tickFormat(d3.format("d"))
+    )
     .call(g => g.select(".domain").attr("stroke", "currentColor").attr("stroke-opacity", .3))
-    .selectAll("text").attr("fill", "currentColor").style("font-size", "9px");
+    .selectAll("text")
+    .attr("fill", d => {
+      const activeYear = data.find(g => g.index === activeIndex)?.year;
+      return d === activeYear ? "#ffc828" : "currentColor";
+    })
+    .style("font-size", "9px")
+    .style("font-weight", d => {
+      const activeYear = data.find(g => g.index === activeIndex)?.year;
+      return d === activeYear ? "bold" : "normal";
+    });
 
   svg.append("g").attr("transform", `translate(${m.l},0)`)
     .call(d3.axisLeft(y).ticks(3).tickSize(-(w - m.l - m.r)))
