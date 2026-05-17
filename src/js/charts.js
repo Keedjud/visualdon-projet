@@ -318,7 +318,7 @@ export function drawLifespan(games, activeIndex, revealedIndex, onGameClick) {
   const innerR = 12;
   const maxValue = d3.max(data, d => d.completion) || 1;
 
-  const radius = d3.scaleLinear()
+  const radius = d3.scaleSqrt()
     .domain([0, maxValue])
     .range([innerR, outerR]);
 

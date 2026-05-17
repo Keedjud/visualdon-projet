@@ -169,3 +169,10 @@
 .lifespan-legend__swatch--main { background: var(--poke-yellow); }
 .lifespan-legend__swatch--extra { background: var(--poke-blue); }
 .lifespan-legend__swatch--completion { background: var(--poke-red); }
+
+.lifespan-legend__note {
+  margin: .15rem 0 0;
+  flex-basis: 100%;
+  font-size: .6rem;
+  color: rgba(245, 241, 235, 0.7);
+}
