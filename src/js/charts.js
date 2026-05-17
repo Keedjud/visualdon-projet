@@ -324,9 +324,10 @@ export function drawLifespan(games, activeIndex, revealedIndex, onGameClick, gen
     .domain([0, maxValue])
     .range([innerR, outerR]);
 
+  const scaleGap = (35 * Math.PI) / 180;
   const angle = d3.scaleBand()
     .domain(data.map(d => d.index))
-    .range([0, Math.PI * 2])
+    .range([scaleGap / 2, Math.PI * 2 - scaleGap / 2])
     .padding(0.08);
 
   svg.attr("viewBox", `0 0 ${w} ${h}`).attr("width", "100%");

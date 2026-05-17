@@ -212,7 +212,7 @@ function updateLifespanFilters() {
   if (!container) return;
 
   const availableGens = getAvailableGenerations();
-  const activeValue = getEffectiveGenerationFilter();
+  const activeValue = _generationFilter;
 
   container.innerHTML = "";
 
@@ -232,6 +232,7 @@ function updateLifespanFilters() {
     container.appendChild(button);
   };
 
+  addButton("Auto", "auto");
   addButton("Tous", "all");
   availableGens.forEach(gen => addButton(`Gen ${gen}`, gen));
 }
