@@ -7,6 +7,7 @@ let _activeIndex = 0;
 let _maxIndex = 0;
 let _isOpen = false;
 let _hasNotif = false;
+let _generationFilter = "auto";
 
 const drag = { x: null, y: null, sx: 0, sy: 0, dragging: false };
 
@@ -182,6 +183,59 @@ function onPointerUp(e) {
   try { e.target.releasePointerCapture(e.pointerId); } catch {}
 }
 
+function getAvailableGenerations() {
+  const seen = new Set();
+  const gens = [];
+  _games.slice(0, _maxIndex + 1).forEach(game => {
+    const gen = game.generation;
+    if (!seen.has(gen)) {
+      seen.add(gen);
+      gens.push(gen);
+    }
+  });
+  return gens;
+}
+
+function getEffectiveGenerationFilter() {
+  if (_generationFilter === "all") return "all";
+  if (_generationFilter && _generationFilter !== "auto") return _generationFilter;
+  return _games[_activeIndex]?.generation || "all";
+}
+
+function updateLifespanChart() {
+  const filter = getEffectiveGenerationFilter();
+  drawLifespan(_games, _activeIndex, _maxIndex, handleLifespanClick, filter);
+}
+
+function updateLifespanFilters() {
+  const container = document.getElementById("lifespan-filters");
+  if (!container) return;
+
+  const availableGens = getAvailableGenerations();
+  const activeValue = getEffectiveGenerationFilter();
+
+  container.innerHTML = "";
+
+  const addButton = (label, value) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "lifespan-filter";
+    button.dataset.value = value;
+    button.textContent = label;
+    button.classList.toggle("is-active", value === activeValue);
+    button.setAttribute("aria-pressed", value === activeValue);
+    button.addEventListener("click", () => {
+      _generationFilter = value;
+      updateLifespanFilters();
+      updateLifespanChart();
+    });
+    container.appendChild(button);
+  };
+
+  addButton("Tous", "all");
+  availableGens.forEach(gen => addButton(`Gen ${gen}`, gen));
+}
+
 function renderContent() {
   const game = _games[_activeIndex] || _games[0];
   if (!game) return;
@@ -202,7 +256,8 @@ function renderContent() {
   } else {
     mech.classList.add("hidden");
   }
-  drawLifespan(_games, _activeIndex, _maxIndex, handleLifespanClick);
+  updateLifespanFilters();
+  updateLifespanChart();
 }
 
 function handleLifespanClick(game) {

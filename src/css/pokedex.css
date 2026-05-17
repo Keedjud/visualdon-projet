@@ -143,6 +143,38 @@
 }
 .pokedex-footer:active { cursor: grabbing; }
 
+.lifespan-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3rem;
+  margin: .2rem 0 .35rem;
+}
+
+.lifespan-filter {
+  border: 1px solid var(--border);
+  border-radius: .45rem;
+  background: rgba(255, 255, 255, .04);
+  color: var(--muted);
+  font-family: var(--font-display);
+  font-size: .55rem;
+  letter-spacing: .06em;
+  padding: .2rem .45rem;
+  text-transform: uppercase;
+  transition: all .2s ease;
+}
+
+.lifespan-filter:hover {
+  border-color: rgba(255, 255, 255, 0.35);
+  color: var(--fg);
+}
+
+.lifespan-filter.is-active {
+  background: var(--poke-yellow);
+  color: var(--bg);
+  border-color: rgba(255, 200, 40, 0.7);
+  box-shadow: 0 0 8px rgba(255, 200, 40, 0.25);
+}
+
 .lifespan-legend {
   display: flex;
   flex-wrap: wrap;

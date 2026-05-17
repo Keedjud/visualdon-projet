@@ -289,12 +289,13 @@ export function drawScores(games, activeIndex, revealedIndex, onGameClick) {
   });
 }
 
-export function drawLifespan(games, activeIndex, revealedIndex, onGameClick) {
+export function drawLifespan(games, activeIndex, revealedIndex, onGameClick, generationFilter = "all") {
   const node = document.getElementById("lifespan-svg");
   if (!node) return;
   const svg = d3.select(node);
   svg.selectAll("*").remove();
 
+  const filterGeneration = generationFilter && generationFilter !== "all";
   const data = games.slice(0, revealedIndex + 1).map((g, i) => {
     const main = Number(g.playtime?.main) || 0;
     const extra = Number(g.playtime?.extra) || 0;
@@ -305,11 +306,12 @@ export function drawLifespan(games, activeIndex, revealedIndex, onGameClick) {
     return {
       index: i,
       name: g.version_group,
+      generation: g.generation,
       main: safeMain,
       extra: safeExtra,
       completion: safeCompletion,
     };
-  });
+  }).filter(d => !filterGeneration || d.generation === generationFilter);
 
   const w = 280, h = 180;
   const cx = w / 2;
