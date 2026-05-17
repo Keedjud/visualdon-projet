@@ -149,7 +149,25 @@
       </div>
       <div>
         <p class="field-label">Durée de vie (heures)</p>
+        <div id="lifespan-filters" class="lifespan-filters" aria-label="Filtres de generation"></div>
         <svg id="lifespan-svg"></svg>
+        <div class="lifespan-legend" aria-label="Legende des durees de vie">
+          <span class="lifespan-legend__item">
+            <span class="lifespan-legend__swatch lifespan-legend__swatch--main"></span>
+            Histoire principale
+          </span>
+          <span class="lifespan-legend__item">
+            <span class="lifespan-legend__swatch lifespan-legend__swatch--extra"></span>
+            Histoire + extras
+          </span>
+          <span class="lifespan-legend__item">
+            <span class="lifespan-legend__swatch lifespan-legend__swatch--completion"></span>
+            Complétion 100%
+          </span>
+          <p class="lifespan-legend__note">
+            Échelle racine carrée utilisée pour mieux valoriser l'histoire principale.
+          </p>
+        </div>
       </div>
       <div id="mechanic-box" class="mechanic-box hidden">
         <p class="field-label poke-blue">Nouvelle mécanique</p>

@@ -157,8 +157,19 @@ export function drawScores(games, activeIndex, revealedIndex, onGameClick) {
   const maxBar = (w / 2) - m.r - labelW / 2;
   svg.attr("viewBox", `0 0 ${w} ${h}`);
 
-  const allScores = data.flatMap(d => [d.metascore, d.userscore * 10]);
-  const minScore = Math.max(0, d3.min(allScores) - 5);
+  const isScore = value => Number.isFinite(value);
+  const metaValue = d => (isScore(d.metascore) ? d.metascore : null);
+  const userValue = d => (isScore(d.userscore) ? d.userscore * 10 : null);
+
+  const allScores = data.flatMap(d => {
+    const scores = [];
+    const meta = metaValue(d);
+    if (meta !== null) scores.push(meta);
+    const user = userValue(d);
+    if (user !== null) scores.push(user);
+    return scores;
+  });
+  const minScore = allScores.length ? Math.max(0, d3.min(allScores) - 5) : 0;
   const x = d3.scaleLinear().domain([minScore, 100]).range([0, maxBar]);
 
   const rowH = (h - m.t - m.b) / Math.max(data.length, 1);
@@ -218,19 +229,33 @@ export function drawScores(games, activeIndex, revealedIndex, onGameClick) {
   rows.append("rect")
     .attr("class", "scores-bar scores-bar--meta")
     .style("cursor", "pointer")
-    .attr("x", d => cx - labelW / 2 - x(d.metascore))
+    .attr("x", d => {
+      const meta = metaValue(d);
+      const metaWidth = meta === null ? 0 : x(meta);
+      return cx - labelW / 2 - metaWidth;
+    })
     .attr("y", -barH / 2)
-    .attr("width", d => x(d.metascore))
+    .attr("width", d => {
+      const meta = metaValue(d);
+      return meta === null ? 0 : x(meta);
+    })
     .attr("height", barH)
     .attr("fill", "#4a8cff").attr("rx", 2)
     .on("click", (event, d) => {
       onGameClick && onGameClick(d);
     });
   rows.append("text")
-    .attr("x", d => cx - labelW / 2 - x(d.metascore) - 4).attr("y", 3)
+    .attr("x", d => {
+      const meta = metaValue(d);
+      const metaWidth = meta === null ? 0 : x(meta);
+      return cx - labelW / 2 - metaWidth - 4;
+    }).attr("y", 3)
     .attr("text-anchor", "end").attr("fill", "#7aa9ff")
     .style("font-size", "10px").style("font-weight", 600)
-    .text(d => d.metascore);
+    .text(d => {
+      const meta = metaValue(d);
+      return meta === null ? "N/D" : meta;
+    });
 
   // User (right, red)
   rows.append("rect")
@@ -238,13 +263,20 @@ export function drawScores(games, activeIndex, revealedIndex, onGameClick) {
     .style("cursor", "pointer")
     .on("click", (_, d) => onGameClick && onGameClick(d))
     .attr("x", cx + labelW / 2).attr("y", -barH / 2)
-    .attr("width", d => x(d.userscore * 10))
+    .attr("width", d => {
+      const user = userValue(d);
+      return user === null ? 0 : x(user);
+    })
     .attr("height", barH).attr("fill", "#ff5057").attr("rx", 2);
   rows.append("text")
-    .attr("x", d => cx + labelW / 2 + x(d.userscore * 10) + 4).attr("y", 3)
+    .attr("x", d => {
+      const user = userValue(d);
+      const userWidth = user === null ? 0 : x(user);
+      return cx + labelW / 2 + userWidth + 4;
+    }).attr("y", 3)
     .attr("text-anchor", "start").attr("fill", "#ff7a80")
     .style("font-size", "10px").style("font-weight", 600)
-    .text(d => d.userscore.toFixed(1));
+    .text(d => (Number.isFinite(d.userscore) ? d.userscore.toFixed(1) : "N/D"));
 
   rows.on("mouseover", function (event, d) {
     if (this.contains(event.relatedTarget)) return;
@@ -257,12 +289,13 @@ export function drawScores(games, activeIndex, revealedIndex, onGameClick) {
   });
 }
 
-export function drawLifespan(games, activeIndex, revealedIndex, onGameClick) {
+export function drawLifespan(games, activeIndex, revealedIndex, onGameClick, generationFilter = "all") {
   const node = document.getElementById("lifespan-svg");
   if (!node) return;
   const svg = d3.select(node);
   svg.selectAll("*").remove();
 
+  const filterGeneration = generationFilter && generationFilter !== "all";
   const data = games.slice(0, revealedIndex + 1).map((g, i) => {
     const main = Number(g.playtime?.main) || 0;
     const extra = Number(g.playtime?.extra) || 0;
@@ -273,11 +306,12 @@ export function drawLifespan(games, activeIndex, revealedIndex, onGameClick) {
     return {
       index: i,
       name: g.version_group,
+      generation: g.generation,
       main: safeMain,
       extra: safeExtra,
       completion: safeCompletion,
     };
-  });
+  }).filter(d => !filterGeneration || d.generation === generationFilter);
 
   const w = 280, h = 180;
   const cx = w / 2;
@@ -286,13 +320,14 @@ export function drawLifespan(games, activeIndex, revealedIndex, onGameClick) {
   const innerR = 12;
   const maxValue = d3.max(data, d => d.completion) || 1;
 
-  const radius = d3.scaleLinear()
+  const radius = d3.scaleSqrt()
     .domain([0, maxValue])
     .range([innerR, outerR]);
 
+  const scaleGap = (35 * Math.PI) / 180;
   const angle = d3.scaleBand()
     .domain(data.map(d => d.index))
-    .range([0, Math.PI * 2])
+    .range([scaleGap / 2, Math.PI * 2 - scaleGap / 2])
     .padding(0.08);
 
   svg.attr("viewBox", `0 0 ${w} ${h}`).attr("width", "100%");
