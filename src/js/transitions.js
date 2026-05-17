@@ -5,8 +5,14 @@ const SCREEN_POSITIONS = {
   "Game_boy": { top: "12%", left: "40%", right: "39%", bottom: "55%", spriteSize: 12 },
   "Game_boy_color": { top: "11%", left: "41%", right: "41%", bottom: "60%", spriteSize: 12 },
   "Game_boy_advance": { top: "22%", left: "30%", right: "30%", bottom: "33%", spriteSize: 18 },
-  "Nintendo_DS": { top: "8%", left: "36%", right: "36%", bottom: "8%", spriteSize: 14 },
-  "Nintendo_3DS": { top: "8%", left: "36%", right: "36%", bottom: "8%", spriteSize: 16 },
+  "Nintendo_DS": [
+    { top: "8%", left: "36%", right: "36%", bottom: "55%", spriteSize: 14 },
+    { top: "55%", left: "36%", right: "36%", bottom: "8%", spriteSize: 14 },
+  ],
+  "Nintendo_3DS": [
+    { top: "8%", left: "32%", right: "32%", bottom: "55%", spriteSize: 16 },
+    { top: "55%", left: "36%", right: "36%", bottom: "8%", spriteSize: 16 },
+  ],
   "Switch": { top: "20%", left: "20%", right: "20%", bottom: "20%", spriteSize: 30 },
 };
 
@@ -17,23 +23,90 @@ let _baseImgH = 0;
 
 export function updateConsole(game, games, gameIndex, scrollProgress, showChen) {
   const img = document.getElementById("console-img");
-  const banner = document.getElementById("game-banner");
   const bannerGen = document.getElementById("game-banner-gen");
   const bannerTitle = document.getElementById("game-banner-title");
   const grid = document.getElementById("pikachu-grid");
+  const grid2 = document.getElementById("pikachu-grid-2");
   const chen = document.getElementById("chen-bubble");
   const overlay = document.getElementById("screen-overlay");
-  const pos = SCREEN_POSITIONS[game.console] ?? SCREEN_POSITIONS["Game_boy"];
+  const overlay2 = document.getElementById("screen-overlay-2");
 
   bannerGen.textContent = game.generation;
   bannerTitle.textContent = game.version_group;
 
-  const consoleImg = document.getElementById("console-img");
+  const positions = Array.isArray(SCREEN_POSITIONS[game.console])
+    ? SCREEN_POSITIONS[game.console]
+    : [SCREEN_POSITIONS[game.console] ?? SCREEN_POSITIONS["Game_boy"]];
+
+  const pos = positions[0];
+  const pos2 = positions[1] ?? null;
+
   if (!_baseImgW || !_baseImgH) {
+    _baseImgW = img.offsetWidth;
+    _baseImgH = img.offsetHeight;
+  }
+
+  applyOverlayPosition(overlay, pos);
+
+  if (pos2) {
+    overlay2.style.display = "flex";
+    applyOverlayPosition(overlay2, pos2);
+  } else {
+    overlay2.style.display = "none";
+  }
+
+  const previousCount = Math.floor((game.total_pokemon - game.new_pokemon_count) / 10);
+  const currentGameCount = Math.floor(game.new_pokemon_count / 10);
+  const visibleCurrent = Math.min(currentGameCount, Math.floor(scrollProgress * (currentGameCount + 1)));
+  const totalPikachuCount = previousCount + visibleCurrent;
+
+  if (prevConsole !== game.console) {
+    gsap.to(grid, { opacity: 0, duration: 0.15, ease: "power2.in" });
+    gsap.to(grid2, { opacity: 0, duration: 0.15, ease: "power2.in" });
+
+    if (prevConsole !== null) {
+      pixelTransition(img, `/src/assets/consoles/${game.console}.png`);
+    } else {
+      img.src = `/src/assets/consoles/${game.console}.png`;
+    }
+
+    prevConsole = game.console;
+    _baseImgW = 0;
+    _baseImgH = 0;
+    grid.dataset.count = String(previousCount);
+    grid2.dataset.count = String(previousCount);
+
+    setTimeout(() => {
+      repositionPikachus(grid, pos.spriteSize);
+      if (pos2) repositionPikachus(grid2, pos2.spriteSize);
+      gsap.to(grid, { opacity: 1, duration: 0.3, ease: "power2.out" });
+      if (pos2) gsap.to(grid2, { opacity: 1, duration: 0.3, ease: "power2.out" });
+    }, 800);
+  }
+
+  if (showChen) {
+    chen.classList.remove("hidden");
+    grid.classList.add("hidden");
+    grid2.classList.add("hidden");
+  } else {
+    chen.classList.add("hidden");
+    grid.classList.remove("hidden");
+    renderPikachus(grid, game.pikachuSpriteUrl, totalPikachuCount, pos.spriteSize);
+    if (pos2) {
+      grid2.classList.remove("hidden");
+      renderPikachus(grid2, game.pikachuSpriteUrl, totalPikachuCount, pos2.spriteSize);
+    } else {
+      grid2.classList.add("hidden");
+    }
+  }
+}
+
+function applyOverlayPosition(overlay, pos) {
+  if (!_baseImgW || !_baseImgH) {
+    const consoleImg = document.getElementById("console-img");
     _baseImgW = consoleImg.offsetWidth;
     _baseImgH = consoleImg.offsetHeight;
   }
-
   const topPx = (parseFloat(pos.top) / 100) * _baseImgH;
   const leftPx = (parseFloat(pos.left) / 100) * _baseImgW;
   const rightPx = (parseFloat(pos.right) / 100) * _baseImgW;
@@ -44,45 +117,6 @@ export function updateConsole(game, games, gameIndex, scrollProgress, showChen) 
   overlay.style.height = (_baseImgH - topPx - bottomPx) + "px";
   overlay.style.right = "auto";
   overlay.style.bottom = "auto";
-
-  const previousCount = Math.floor((game.total_pokemon - game.new_pokemon_count) / 10);
-  const currentGameCount = Math.floor(game.new_pokemon_count / 10);
-  const visibleCurrent = Math.min(currentGameCount, Math.floor(scrollProgress * (currentGameCount + 1)));
-
-  const totalPikachuCount = previousCount + visibleCurrent;
-
-  if (prevConsole !== game.console) {
-      gsap.to(grid, {
-      opacity: 0,
-      duration: 0,
-      ease: "power2.in",
-    }); 
-      if (prevConsole !== null) {
-      pixelTransition(img, `/src/assets/consoles/${game.console}.png`);
-      _maxPikachuCount = previousCount;
-    } else {
-      img.src = `/src/assets/consoles/${game.console}.png`;
-    }
-    prevConsole = game.console;
-    _maxPikachuCount = previousCount;
-    grid.dataset.count = String(previousCount); 
-    repositionPikachus(grid, pos.spriteSize);
-
-    setTimeout(() => {
-      repositionPikachus(grid, pos.spriteSize);
-      gsap.to(grid, { opacity: 1, duration: 0.3, ease: "power2.out" });
-    }, 800);
-  }
-
-
-  if (showChen) {
-    chen.classList.remove("hidden");
-    grid.classList.add("hidden");
-  } else {
-    chen.classList.add("hidden");
-    grid.classList.remove("hidden");
-    renderPikachus(grid, game.pikachuSpriteUrl, totalPikachuCount, pos.spriteSize);
-  }
 }
 
  function pixelTransition(img, newSrc) {
