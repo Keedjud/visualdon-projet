@@ -1,6 +1,5 @@
 import { gsap } from "./gsap.js";
 
-// Console transitions + pikachu grid update.
 const SCREEN_POSITIONS = {
   "Game_boy": { top: "12%", left: "40%", right: "39%", bottom: "55%", spriteSize: 12 },
   "Game_boy_color": { top: "11%", left: "41%", right: "41%", bottom: "60%", spriteSize: 12 },
